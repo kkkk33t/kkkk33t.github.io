@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>markdown</title>
+      <link href="/2023/060123825.html"/>
+      <url>/2023/060123825.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="md教学"><a href="#md教学" class="headerlink" title="md教学"></a>md教学</h1><p>这是一个md格式的教学文件，主要用于进行md文件练习</p><h2 id="md目录"><a href="#md目录" class="headerlink" title="md目录"></a>md目录</h2><p>TOC会自动为当前文档生成目录，目录是根据当前文档的标题来生产的，TOC写在文档什么位置，目录就会出现在哪个位置<br>有些网站不支持TOC功能</p><h2 id="md文字修饰"><a href="#md文字修饰" class="headerlink" title="md文字修饰"></a>md文字修饰</h2><p>在markdown文档中，可以为文字添加加粗，斜体，删除线，下划线，当然这些效果也是<strong>可以叠加的</strong>，例如英文就比较适宜使用<br>斜体，例如：*This is a test mark down text.*而当我们发现已经写过的内容存在误导他人或者本身就错误明显的时候，我们<br>可以使用删除字符来删除文字，比如：<del>太阳是从东边出来的</del><br>当然除了使用加粗文字来强敌哦之外，你也可以使用为句子画横线的方法，例如：<u>使用这种方法就可以达到画横线的目的</u></p><h2 id="md分割线"><a href="#md分割线" class="headerlink" title="md分割线"></a>md分割线</h2><p>在md文件中分割线是使用三个星号或者三个-来实现的，具体效果，你可以看我标题之间的内容。</p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul><li>有序列表<br>有序列表是使用数字和点来完成的，这个很好理解，因为我们平时的任务清单也是类似这个形式，比如把大象放进冰箱有几部：</li></ul><ol><li>打开冰箱门</li><li>把大象放进冰箱</li><li>关上冰箱门</li></ol><ul><li>无序列表<br>无序列表非常简单，只需要用加减号或者星号即可实现，还是刚才那个例子<ul><li>打开冰箱门</li><li>把大象放进冰箱</li><li>关上冰箱门</li></ul></li><li>待办列表<br>待办列表主要是用来表现事情是否完成比如下面的内容：<ul><li>[] 做博客网站</li><li>[] 复习高数和数逻</li><li><input checked="" disabled="" type="checkbox"> 摆烂</li></ul></li><li>列表嵌套<br>这一部分的内容我觉得不需要做什么教学，实在是很简单啦，就是在下一行前用一次Tab即可</li></ul><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul><li>一级引用<br>引用使用的是大于号，例如我下面的句子：<blockquote><p>横眉冷对千夫指，俯首甘为孺子牛</p></blockquote></li><li>多级引用<br>几级引用，就有几个&gt;,自己试着就行了</li></ul><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>代码的用法也是两种，行内代码和多行代码。下面是一些具体例子：</p><ol><li>行内代码<br>C语言第一课上的是<code>Hello,World</code></li><li>多行代码</li></ol><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">;</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>c<span class="token operator">=</span>a<span class="token operator">+</span>b<span class="token punctuation">;</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><strong>注释：</strong>如果想实现多行代码的缩进排版，前面一定要有空行，同时每行要有一个制表符</p><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格的书写方法也是比较容易的，用竖线来分隔不同的单元格，使用横线-来分隔表头和其他行，下面我以遗传病的分类为例，写一个内容吧。</p><table><thead><tr><th>常见遗传病</th><th>举例</th></tr></thead><tbody><tr><td>单基因遗传病</td><td>白化病、先天性耳聋</td></tr><tr><td>多基因遗传病</td><td>糖尿病、高血压</td></tr><tr><td>染色体病</td><td>唐氏综合征</td></tr><tr><td>体细胞遗传病</td><td>恶性肿瘤</td></tr><tr><td>线粒体遗传病</td><td>Leber遗传性视神经病</td></tr></tbody></table><h2 id="超级链接"><a href="#超级链接" class="headerlink" title="超级链接"></a>超级链接</h2><ol><li>表示方法<br>超级链接的表示方式如下：<br>[ 超级链接文字 ] (网址)，所以最后你看到的实际上只有文字了，但是其实文字是链接到一个网址的</li><li>直接显示链接<br>使用&lt;&gt; 符号将连接地址括住：比如&lt; <a href="https://www.baidu.com/">https://www.baidu.com/</a> &gt;</li><li>使用锚点<br>使用锚点，首先是先定义锚点，然后再引用锚点。定义锚点是在一个标题 的后边加上</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> blog </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客简介</title>
       <link href="/2023/05311121.html"/>
       <url>/2023/05311121.html</url>

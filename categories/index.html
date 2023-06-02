@@ -383,7 +383,7 @@
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
     var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(/medias/featureimages/3.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/featureimages/5.jpg)');
 
 来源: 夜法之书
 文章作者: 夜法之书
@@ -420,6 +420,15 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">Hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/markdown/" title="markdown: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">markdown
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -467,7 +476,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Hexo","max":2}],
+            indicator: [{"name":"Hexo","max":2},{"name":"markdown","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -478,7 +487,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1],
+                    value : [1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -562,7 +571,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">436</span>
+                        class="white-color">1.3k</span>
             
             
             
@@ -840,14 +849,6 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 鼠标星星特效 -->

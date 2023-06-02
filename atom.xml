@@ -6,7 +6,7 @@
   <link href="https://kkkk33t.github.io/atom.xml" rel="self"/>
   
   <link href="https://kkkk33t.github.io/"/>
-  <updated>2023-06-01T04:36:11.320Z</updated>
+  <updated>2023-06-02T05:21:14.903Z</updated>
   <id>https://kkkk33t.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>markdown</title>
+    <link href="https://kkkk33t.github.io/2023/060123825.html"/>
+    <id>https://kkkk33t.github.io/2023/060123825.html</id>
+    <published>2023-06-01T15:43:32.000Z</published>
+    <updated>2023-06-02T05:21:14.903Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;md教学&quot;&gt;&lt;a href=&quot;#md教学&quot; class=&quot;headerlink&quot; title=&quot;md教学&quot;&gt;&lt;/a&gt;md教学&lt;/h1&gt;&lt;p&gt;这是一个md格式的教学文件，主要用于进行md文件练习&lt;/p&gt;
+&lt;h2 id=&quot;md目录&quot;&gt;&lt;a href=&quot;#md目录&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="markdown" scheme="https://kkkk33t.github.io/categories/markdown/"/>
+    
+    
+    <category term="markdown" scheme="https://kkkk33t.github.io/tags/markdown/"/>
+    
+    <category term="blog" scheme="https://kkkk33t.github.io/tags/blog/"/>
+    
+    <category term="hexo" scheme="https://kkkk33t.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>博客简介</title>
