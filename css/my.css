@@ -1,2 +1,9 @@
 /* Here is your custom css styles. */
+@font-face{
+    font-family: 'myFont';
+    src: url('https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/font/myfont.ttf');
+}
 
+body{
+    font-family: 'myFont';
+}
