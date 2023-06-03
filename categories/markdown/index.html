@@ -49,8 +49,6 @@
     
 
 
-    <!--自定义添加的 Loading Page CSS 样式-->
-
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
@@ -60,39 +58,7 @@
 <link rel="alternate" href="/atom.xml" title="yangのblog" type="application/atom+xml">
 </head>
 
-
 <body>
-    <!--自定义的 Loading Page-->
-
-    
-  <div id="loader-box">
-    /* 你的 HTML 代码将放在这里 */
-<div class="loader-wrapper">
-        <div class="loader"><img src="/images/1.png" alt=""></div>
-        <div class="loader-text">
-            <!-- 10个div -->
-            <div>L</div>
-            <div>O</div>
-            <div>A</div>
-            <div>D</div>
-            <div>I</div>
-            <div>N</div>
-            <div>G</div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div
-    <script>
-        var endLoading = function () {
-            document.body.style.overflow = 'auto';
-            document.getElementById('loader-box').remove();
-        }
-        window.addEventListener('load',endLoading);
-    </script>
-  </div>
-
-
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -193,7 +159,7 @@
       
       <i class="fas fa-list" style="zoom: 0.6;"></i>
       
-      <span>Medias</span>
+      <span>媒体</span>
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
@@ -350,7 +316,7 @@
 			
 				<i class="fa-fw fas fa-list"></i>
 			
-			Medias
+			媒体
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
@@ -626,6 +592,29 @@ md目录TOC会自动为当前文档生成目录，目录是根据当前文档的
     </article>
 </main>
 
+
+
+
+  <div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="configure-border-1">
+        <div class="configure-core"></div>
+      </div>
+      <div class="configure-border-2">
+        <div class="configure-core"></div>
+      </div>
+      <div class="loading-word">玩命加载中...</div>
+    </div>
+  </div>
+  <!-- 页面加载动画 -->
+  <script>
+    $(document).ready(function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loading-box').classList.add("loaded")
+    })
+  </script>
 
 
 
@@ -964,17 +953,6 @@ $(function () {
 
     
 
-<!-- 冒泡 -->
-
-    <script type="text/javascript">
-        // 只在桌面版网页启用特效
-        var windowWidth = $(window).width();
-        document.write(
-            '<script type="text/javascript" src="/libs/others/buble.js"><\/script>'
-        );
-    </script>
-
-
     
         <script type="text/javascript" src="/js/tw_cn.js"></script>
         <script type="text/javascript">
@@ -1004,6 +982,15 @@ $(function () {
 
     <!-- 鼠标星星特效 -->
     
+
+<!-- 冒泡 -->
+    <script type="text/javascript">
+        // 只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        document.write(
+            '<script type="text/javascript" src="/libs/others/buble.js"><\/script>'
+        );
+    </script>
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>

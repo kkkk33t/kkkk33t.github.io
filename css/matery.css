@@ -41,43 +41,6 @@ body {
     overflow-y: auto;
 }
 
-/*直达评论按钮样式*/
-.comment-scroll {
-    position: fixed;
-    right: 15px;
-    bottom: 135px;
-    padding-top: 15px;
-    margin-bottom: 0;
-    z-index: 998;
-}
-
-.comment-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #87CEFA 0%, #FFC0CB 100%);
-    width: 48px;
-    height: 48px;
-}
-
-.comment-scroll .btn-floating i {
-    line-height: 48px;
-    font-size: 1.8rem;
-}
-
-/*滑动条*/
-::-webkit-scrollbar-thumb {
-    background-color: #FF2A68;
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
-    border-radius: 3em;
-}
-::-webkit-scrollbar-track {
-    background-color: #ffcacaff;
-    border-radius: 3em;
-}
-::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-}
-
-
 h1 {
     margin: 48px 0 22px -5px;
     font-size: 2.0rem;
@@ -135,6 +98,42 @@ blockquote {
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
+}
+
+/*直达评论按钮样式*/
+.comment-scroll {
+    position: fixed;
+    right: 15px;
+    bottom: 135px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+.comment-scroll .btn-floating {
+    background: linear-gradient(to bottom right, #20c997 0%, #17a2b8 100%);
+    width: 48px;
+    height: 48px;
+}
+
+.comment-scroll .btn-floating i {
+    line-height: 48px;
+    font-size: 1.8rem;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #FF2A68;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffcacaff;
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
 pre {

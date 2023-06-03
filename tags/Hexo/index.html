@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: Hexo, blog test">
+    <meta name="keywords" content="标签: hexo, blog test">
     <meta name="description" content="bilibili大学|计算机科学与技术|网络调控与管理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: Hexo | yangのblog</title>
+    <title>标签: hexo | yangのblog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -49,8 +49,6 @@
     
 
 
-    <!--自定义添加的 Loading Page CSS 样式-->
-
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
@@ -60,39 +58,7 @@
 <link rel="alternate" href="/atom.xml" title="yangのblog" type="application/atom+xml">
 </head>
 
-
 <body>
-    <!--自定义的 Loading Page-->
-
-    
-  <div id="loader-box">
-    /* 你的 HTML 代码将放在这里 */
-<div class="loader-wrapper">
-        <div class="loader"><img src="/images/1.png" alt=""></div>
-        <div class="loader-text">
-            <!-- 10个div -->
-            <div>L</div>
-            <div>O</div>
-            <div>A</div>
-            <div>D</div>
-            <div>I</div>
-            <div>N</div>
-            <div>G</div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div
-    <script>
-        var endLoading = function () {
-            document.body.style.overflow = 'auto';
-            document.getElementById('loader-box').remove();
-        }
-        window.addEventListener('load',endLoading);
-    </script>
-  </div>
-
-
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -193,7 +159,7 @@
       
       <i class="fas fa-list" style="zoom: 0.6;"></i>
       
-      <span>Medias</span>
+      <span>媒体</span>
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
@@ -350,7 +316,7 @@
 			
 				<i class="fa-fw fas fa-list"></i>
 			
-			Medias
+			媒体
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
@@ -557,7 +523,7 @@
                 
                 <a href="/tags/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             data-tagname="hexo" style="background-color: #D5F5E3;">hexo
                         <span class="tag-length">1</span>
                     </span>
@@ -566,7 +532,7 @@
                 
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
+                             chip-default "
                             data-tagname="Hexo" style="background-color: #E8F8F5;">Hexo
                         <span class="tag-length">1</span>
                     </span>
@@ -601,28 +567,28 @@
         <div class="row tags-posts">
             
             
-            <div class="article tag-post col s12 m6 l4" data-tags="Hexo, Blog, Github" data-aos="fade-up">
+            <div class="article tag-post col s12 m6 l4" data-tags="markdown, blog, hexo" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2023/05311121.html">
+                    <a href="/2023/060123825.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="博客简介">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="markdown语法知识">
                             
-                            <span class="card-title">博客简介</span>
+                            <span class="card-title">markdown语法知识</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                                <a href="/categories/markdown/" class="post-category">
+                                markdown
                                 </a>
                                 
                                 
@@ -636,6 +602,29 @@
     </article>
 </main>
 
+
+
+
+  <div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="configure-border-1">
+        <div class="configure-core"></div>
+      </div>
+      <div class="configure-border-2">
+        <div class="configure-core"></div>
+      </div>
+      <div class="loading-word">玩命加载中...</div>
+    </div>
+  </div>
+  <!-- 页面加载动画 -->
+  <script>
+    $(document).ready(function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loading-box').classList.add("loaded")
+    })
+  </script>
 
 
 
@@ -974,17 +963,6 @@ $(function () {
 
     
 
-<!-- 冒泡 -->
-
-    <script type="text/javascript">
-        // 只在桌面版网页启用特效
-        var windowWidth = $(window).width();
-        document.write(
-            '<script type="text/javascript" src="/libs/others/buble.js"><\/script>'
-        );
-    </script>
-
-
     
         <script type="text/javascript" src="/js/tw_cn.js"></script>
         <script type="text/javascript">
@@ -1014,6 +992,15 @@ $(function () {
 
     <!-- 鼠标星星特效 -->
     
+
+<!-- 冒泡 -->
+    <script type="text/javascript">
+        // 只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        document.write(
+            '<script type="text/javascript" src="/libs/others/buble.js"><\/script>'
+        );
+    </script>
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
