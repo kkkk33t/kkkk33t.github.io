@@ -123,9 +123,10 @@ blockquote {
 
 /* 滚动条 */
 ::-webkit-scrollbar-thumb {
-    background-color: #FF2A68;
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
-    border-radius: 3em;
+  background-color: #777; /* 设置轨道的颜色为灰色 */
+  background-image:
+    -webkit-linear-gradient(45deg, transparent 25%, #ddd 25%, #ddd 50%, transparent 50%, transparent 75%, #ddd 75%, #ddd); /* 使用渐变实现灰色和浅灰色相间 */
+  border-radius: 3em;
 }
 ::-webkit-scrollbar-track {
     background-color: #ffcacaff;
