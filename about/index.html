@@ -69,26 +69,6 @@
 
 <body>
     
-<div id="loading-box">
-    <div class="loading-left-bg"></div>
-    <div class="loading-right-bg"></div>
-    <div class="spinner-box">
-        <div class="configure-border-1">
-            <div class="configure-core"></div>
-        </div>
-        <div class="configure-border-2">
-            <div class="configure-core"></div>
-        </div>
-        <div class="loading-word">玩命加载中...</div>
-    </div>
-</div>
-<script>
-    window.addEventListener('load', function(){
-        document.body.style.overflow = 'auto';
-        document.getElementById('loading-box').classList.add("loaded")
-    }, false)
-</script>
-
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -747,7 +727,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"markdown","value":1},{"name":"Hexo","value":1}],
+                data: [{"name":"Hexo","value":1},{"name":"markdown","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -771,7 +751,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["markdown","blog","hexo","Hexo","Blog","Github"]
+                data: ["Hexo","Blog","Github","markdown","blog","hexo"]
             }
         ],
         yAxis: [
@@ -954,24 +934,6 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/markdown/">
-                <span class="chip center-align waves-effect waves-light chip-default">markdown</span>
-            </a>
-            
-            
-            
-            <a href="/tags/blog/">
-                <span class="chip center-align waves-effect waves-light chip-default">blog</span>
-            </a>
-            
-            
-            
-            <a href="/tags/hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
-            </a>
-            
-            
-            
             <a href="/tags/Hexo/">
                 <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
             </a>
@@ -986,6 +948,24 @@
             
             <a href="/tags/Github/">
                 <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            </a>
+            
+            
+            
+            <a href="/tags/markdown/">
+                <span class="chip center-align waves-effect waves-light chip-default">markdown</span>
+            </a>
+            
+            
+            
+            <a href="/tags/blog/">
+                <span class="chip center-align waves-effect waves-light chip-default">blog</span>
+            </a>
+            
+            
+            
+            <a href="/tags/hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
             </a>
             
             
