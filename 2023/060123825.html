@@ -70,13 +70,33 @@ md目录TOC会自动为当前文档生成目录，目录是根据当前文档的
 
 <body>
     
+<div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="configure-border-1">
+            <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+            <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">玩命加载中...</div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function(){
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+    }, false)
+</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">KZE</span>
                 </a>
@@ -223,7 +243,7 @@ md目录TOC会自动为当前文档生成目录，目录是根据当前文档的
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">KZE</div>
         <div class="logo-desc">
@@ -653,12 +673,12 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
 </li>
 <li><p>把图片存入markdown文件<br>这种方式需要先将图片转换成base64编码格式，然后将图片内容放入Markdown文档中（所以，如果图片很大的话，Markdown文档也会变得很大），最后再引用图片。语法如下（描述文字可不写），第一行为图片的引用，第二行为图片的声明（一般可写在文档的最后）：<br>![描述图片的文字][图片声明]<br>[图片声明]:图片base64 编码内容<br>例如：<br><code>![描述][base64str][base64str]:data:image/png;base64,iVBORw0......</code><br>这种方式不太方便，使用频率极低，不建议使用</p>
 </li>
-<li><p>使用HTML<img> 标签<br>我个人认为这是一种几号的方式，主要是可以控制图片的大小比较方便，上面几种方式的调整大小方式我还在研究，具体请看我以后的补充吧<br>举例：<br><code>&lt;img src="https://cdn.jsdelivr.net/gh/kkkk33t/cdntc/*img/*wallhaven-m3ppwy.jpg" width=100/&gt;</code></p>
+<li><p>使用HTML<img> 标签<br>我个人认为这是一种几号的方式，主要是可以控制图片的大小比较方便，上面几种方式的调整大小方式我还在研究，具体请看我以后的补充吧<br>举例：<br><code>&lt;img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://cdn.jsdelivr.net/gh/kkkk33t/cdntc/*img/*wallhaven-m3ppwy.jpg" width=100/&gt;</code></p>
 </li>
 </ol>
 <hr>
-<p><strong>补充：</strong>通过使用<img>标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。<br><code>&lt;img src="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png"  width="600" /&gt;</code><br><em>说明</em>：属性后面的数值也以写成百分比的形式，如width = “60%”<br>带尺寸的图片，需同时指定：width = “600”，height = “600”<br>宽度确定高度等比例的图片，只要指定：width = “600”<br>高度确定宽度等比例的图片，只要指定：height = “600”</p>
-<p>调整对齐方式一<br>可通过在<img>标签内添加align=“center”属性修改图片的对齐方式。<br><code>&lt;img src="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png"  align = "right"  width="600" /&gt;</code><br>说明：该种方法也可以实现左图右字或左字右图的效果<br>居中对齐：align = “middle”，不知道为啥在CSDN中测试的时候居中不起作用<br>靠左对齐：align = “left”<br>靠右对齐：align = “right”</p>
+<p><strong>补充：</strong>通过使用<img>标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。<br><code>&lt;img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png"  width="600" /&gt;</code><br><em>说明</em>：属性后面的数值也以写成百分比的形式，如width = “60%”<br>带尺寸的图片，需同时指定：width = “600”，height = “600”<br>宽度确定高度等比例的图片，只要指定：width = “600”<br>高度确定宽度等比例的图片，只要指定：height = “600”</p>
+<p>调整对齐方式一<br>可通过在<img>标签内添加align=“center”属性修改图片的对齐方式。<br><code>&lt;img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png"  align = "right"  width="600" /&gt;</code><br>说明：该种方法也可以实现左图右字或左字右图的效果<br>居中对齐：align = “middle”，不知道为啥在CSDN中测试的时候居中不起作用<br>靠左对齐：align = “left”<br>靠右对齐：align = “right”</p>
 <p>调整对齐方式二（推荐)<br>也可通过将<img>标签包裹在<code>&lt;p align=“center”&gt; . . . &lt;/p&gt;</code>标签内修改图片的对齐方式。</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;p align = "center"&gt;    
 &lt;img  src="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png" width="400" /&gt;
@@ -683,12 +703,12 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
 左图右文：align = “left”
 左文右图：align = “right”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>    
-<img src="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png" width="400" align="left">
+<img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png" width="400" align="left">
 文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。
 </p>
 <pre class="line-numbers language-none"><code class="language-none">（2）左文右图<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>    
-<img src="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png" width="400" align="right">
+<img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png" width="400" align="right">
 文字在左边，图片在右边。文字在左边，图片在右边。文字在左边，图片在右边。文字在左边，图片在右边。文字在左边，图片在右边。</p>
 <pre class="line-numbers language-none"><code class="language-none">```
 如果想给图像加个标注，可以这么做：
@@ -767,7 +787,7 @@ Figure 1. Lena
 </ul>
 <p>其效果如下：</p>
 <p align="center">    
-<img src="https://pic1.zhimg.com/80/v2-13f7a46fa02acf6f285545576052a9a8_1440w.webp" width="400">
+<img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="https://pic1.zhimg.com/80/v2-13f7a46fa02acf6f285545576052a9a8_1440w.webp" width="400">
 </p>
 
 <h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><p>这篇文章我引用了三位大佬的内容和部分图片，在此特别为他们送上感谢，大家有兴趣也可以去看看他们的文章。<br><strong>引用声明：</strong></p>
@@ -886,10 +906,10 @@ Figure 1. Lena
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1267,7 +1287,7 @@ Figure 1. Lena
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="markdown语法知识">
+                        <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="markdown语法知识">
                         
                         <span class="card-title">markdown语法知识</span>
                     </div>
@@ -1325,7 +1345,7 @@ Figure 1. Lena
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="博客简介">
+                        <img src="https://img.shida66.com/upload/head_img_tmp/2019/03/29/f07aedb2fc2879994362d07e6c88b1e8.gif" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="博客简介">
                         
                         <span class="card-title">博客简介</span>
                     </div>
@@ -1570,56 +1590,48 @@ Figure 1. Lena
             
                 <span id="sitetime"> Loading ...</span>
                 <script>
-                    var calcSiteTime = function () {
-                        var seconds = 1000;
-                        var minutes = seconds * 60;
-                        var hours = minutes * 60;
-                        var days = hours * 24;
-                        var years = days * 365;
-                        var today = new Date();
-                        var startYear = "2023";
+                    
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
                         var startMonth = "5";
                         var startDate = "27";
                         var startHour = "19";
                         var startMinute = "0";
                         var startSecond = "0";
-                        var todayYear = today.getFullYear();
-                        var todayMonth = today.getMonth() + 1;
-                        var todayDate = today.getDate();
-                        var todayHour = today.getHours();
-                        var todayMinute = today.getMinutes();
-                        var todaySecond = today.getSeconds();
-                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                        var diff = t2 - t1;
-                        var diffYears = Math.floor(diff / years);
-                        var diffDays = Math.floor((diff / days) - diffYears * 365);
-
-                        // 区分是否有年份.
-                        var language = 'zh-CN';
-                        if (startYear === String(todayYear)) {
-                            document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
-                            if (language === 'zh-CN') {
-                                daysTip = '小站已在风雨中运行 ' + diffDays + ' 天';
-                            } else if (language === 'zh-HK') {
-                                daysTip = '小站已在風雨中運行 ' + diffDays + ' 天';
-                            }
-                            document.getElementById("sitetime").innerHTML = daysTip;
-                        } else {
-                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
-                            if (language === 'zh-CN') {
-                                yearsAndDaysTip = '小站已在风雨中运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
-                            } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '小站已在風雨中運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
-                            }
-                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
-                        }
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     }
-
-                    calcSiteTime();
+                }
+                setInterval(siteTime, 1000);
+                
                 </script>
             
             <br>
@@ -1837,6 +1849,7 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
+
 <!-- 冒泡 -->
     <script type="text/javascript">
         // 只在桌面版网页启用特效
@@ -1893,6 +1906,19 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 3,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>
