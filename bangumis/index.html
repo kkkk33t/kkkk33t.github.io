@@ -432,6 +432,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -490,14 +503,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    8 分
                 </div>
                 
 
@@ -542,7 +555,7 @@
     (0)</a>
     <a class="bangumi-tab" id="bangumi-tab2" href="javascript:;" rel="external" target="_self" onclick="return false">
         在看
-        (7)</a>
+        (11)</a>
     <a class="bangumi-tab" id="bangumi-tab3" href="javascript:;" rel="external" target="_self" onclick="return false">
         已看
         (0)</a>
@@ -562,6 +575,192 @@
     </div>
     <div id="bangumi-item2">
         
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture"><img src="/img/bangumi-loading.gif"  data-src="https://i0.hdslb.com/bfs/bangumi/image/91e9534cc55aa1a6dc959e7d6d33bde970208232.png@220w_280h.webp" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://www.bilibili.com/bangumi/media/md28229899/">咒术回战</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" >
+                <span class="bangumi-info-item">
+                
+                <span class="bangumi-info-total">全24话</span><em
+                        class="bangumi-info-label-em">0</em>
+                </span>
+                
+                
+                <span class="bangumi-info-item bangumi-area">
+                    <span class="bangumi-info-label">番剧</span> <em>日本</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-play">
+                    <span class="bangumi-info-label">总播放</span> <em>7.8 亿</em>
+                </span>
+                <span class="bangumi-info-item bangumi-follow">
+                    <span class="bangumi-info-label">追番人数</span> <em>1185.2 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-coin">
+                    <span class="bangumi-info-label">硬币数</span> <em>439.1 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-danmaku">
+                    <span class="bangumi-info-label">弹幕总数</span> <em>511.9 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>9.7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：少年战斗着——「为寻求正确的死亡」
+辛酸·后悔·耻辱
+
+人类产生的负面情感，化为诅咒，潜入日常生活
+
+诅咒是蔓延于世界的祸源，最糟糕的情况下，会让人类踏入死亡
+并且，诅咒只能以诅咒祓除
+
+拥有惊人身体...</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture"><img src="/img/bangumi-loading.gif"  data-src="https://i0.hdslb.com/bfs/bangumi/image/cac1699418451387f93572066b7e5d14d799d3cd.jpg@220w_280h.webp" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://www.bilibili.com/bangumi/media/md28233903/">关于我转生变成史莱姆这档事 转生史莱姆日记</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" >
+                <span class="bangumi-info-item">
+                
+                <span class="bangumi-info-total">全12话</span><em
+                        class="bangumi-info-label-em">0</em>
+                </span>
+                
+                
+                <span class="bangumi-info-item bangumi-area">
+                    <span class="bangumi-info-label">番剧</span> <em>日本</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-play">
+                    <span class="bangumi-info-label">总播放</span> <em>1.1 亿</em>
+                </span>
+                <span class="bangumi-info-item bangumi-follow">
+                    <span class="bangumi-info-label">追番人数</span> <em>833.6 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-coin">
+                    <span class="bangumi-info-label">硬币数</span> <em>47.5 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-danmaku">
+                    <span class="bangumi-info-label">弹幕总数</span> <em>47.3 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>9.7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：美妙的史莱姆人生！
+
+累计突破50万部的大人气外传四格漫画『转生史莱姆日记』，作为转生史莱姆的外传系列首次TV动画化！
+「因为拿到了贵重的纸，我把至今为止发生的事情以日记形式记录了下来。开头的话就这么...</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture"><img src="/img/bangumi-loading.gif"  data-src="https://i0.hdslb.com/bfs/bangumi/f5d5f51b941c01f8b90b361b412dc75ecc2608d3.png@220w_280h.webp" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://www.bilibili.com/bangumi/media/md102392/">工作细胞</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" >
+                <span class="bangumi-info-item">
+                
+                <span class="bangumi-info-total">全14话</span><em
+                        class="bangumi-info-label-em">0</em>
+                </span>
+                
+                
+                <span class="bangumi-info-item bangumi-area">
+                    <span class="bangumi-info-label">番剧</span> <em>日本</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-play">
+                    <span class="bangumi-info-label">总播放</span> <em>2.4 亿</em>
+                </span>
+                <span class="bangumi-info-item bangumi-follow">
+                    <span class="bangumi-info-label">追番人数</span> <em>820.9 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-coin">
+                    <span class="bangumi-info-label">硬币数</span> <em>94.2 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-danmaku">
+                    <span class="bangumi-info-label">弹幕总数</span> <em>457.0 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>9.6</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：这是一个关于你自身的故事。你体内的故事——。
+人的细胞数量，约为37兆2千亿个。
+细胞们在名为身体的世界中，今天也精神满满、无休无眠地在工作着。
+运送着氧气的红细胞，与细菌战斗的白细胞……！这里，有着...</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture"><img src="/img/bangumi-loading.gif"  data-src="https://i0.hdslb.com/bfs/bangumi/image/f50a08cc1562f2c1e933b656c00db3fcafd110e9.png@220w_280h.webp" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://www.bilibili.com/bangumi/media/md28237119/">间谍过家家</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" >
+                <span class="bangumi-info-item">
+                
+                <span class="bangumi-info-total">全25话</span><em
+                        class="bangumi-info-label-em">0</em>
+                </span>
+                
+                
+                <span class="bangumi-info-item bangumi-area">
+                    <span class="bangumi-info-label">番剧</span> <em>日本</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-play">
+                    <span class="bangumi-info-label">总播放</span> <em>7.1 亿</em>
+                </span>
+                <span class="bangumi-info-item bangumi-follow">
+                    <span class="bangumi-info-label">追番人数</span> <em>1201.6 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-coin">
+                    <span class="bangumi-info-label">硬币数</span> <em>299.1 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-danmaku">
+                    <span class="bangumi-info-label">弹幕总数</span> <em>300.9 万</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>9.7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：每个人都有不可告人的一面。
+
+这是一个世界各国均暗地里进行激烈情报战的时代。奥斯塔尼亚（Ostania）与维斯达利斯（Westalis）的冷战状态已经持续数十年。
+
+&lt;黄昏&gt;是维斯达利斯情报局奥斯塔尼...</p> </div>
+    </div>
+</div>
+
         
         <div class="bangumi-item">
     <div class="bangumi-picture"><img src="/img/bangumi-loading.gif"  data-src="https://i0.hdslb.com/bfs/bangumi/image/087b862b772ee4e644478a36c757a26db476193d.png@220w_280h.webp" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
@@ -587,13 +786,13 @@
                     <span class="bangumi-info-label">总播放</span> <em>3.6 亿</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>328.1 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>328.2 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
-                    <span class="bangumi-info-label">硬币数</span> <em>142.0 万</em>
+                    <span class="bangumi-info-label">硬币数</span> <em>142.1 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-danmaku">
-                    <span class="bangumi-info-label">弹幕总数</span> <em>222.6 万</em>
+                    <span class="bangumi-info-label">弹幕总数</span> <em>222.7 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-info-item-score">
                     <span class="bangumi-info-label">评分</span> <em>9.9</em>
@@ -626,10 +825,10 @@
                 </span>
                 
                 <span class="bangumi-info-item bangumi-play">
-                    <span class="bangumi-info-label">总播放</span> <em>3774.0 万</em>
+                    <span class="bangumi-info-label">总播放</span> <em>3778.6 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>543.3 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>543.4 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">硬币数</span> <em>12.4 万</em>
@@ -670,10 +869,10 @@
                 </span>
                 
                 <span class="bangumi-info-item bangumi-play">
-                    <span class="bangumi-info-label">总播放</span> <em>2116.4 万</em>
+                    <span class="bangumi-info-label">总播放</span> <em>2118.1 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>169.9 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>170.0 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">硬币数</span> <em>19.7 万</em>
@@ -715,13 +914,13 @@
                 </span>
                 
                 <span class="bangumi-info-item bangumi-play">
-                    <span class="bangumi-info-label">总播放</span> <em>9674.3 万</em>
+                    <span class="bangumi-info-label">总播放</span> <em>9682.1 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>196.5 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>196.6 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
-                    <span class="bangumi-info-label">硬币数</span> <em>32.6 万</em>
+                    <span class="bangumi-info-label">硬币数</span> <em>32.7 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-danmaku">
                     <span class="bangumi-info-label">弹幕总数</span> <em>24.9 万</em>
@@ -764,10 +963,10 @@
                 </span>
                 
                 <span class="bangumi-info-item bangumi-play">
-                    <span class="bangumi-info-label">总播放</span> <em>3097.0 万</em>
+                    <span class="bangumi-info-label">总播放</span> <em>3098.1 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>118.6 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>118.7 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
                     <span class="bangumi-info-label">硬币数</span> <em>11.1 万</em>
@@ -812,7 +1011,7 @@
                     <span class="bangumi-info-label">追番人数</span> <em>461.9 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
-                    <span class="bangumi-info-label">硬币数</span> <em>148.1 万</em>
+                    <span class="bangumi-info-label">硬币数</span> <em>148.2 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-danmaku">
                     <span class="bangumi-info-label">弹幕总数</span> <em>3.1 亿</em>
@@ -848,16 +1047,16 @@
                 </span>
                 
                 <span class="bangumi-info-item bangumi-play">
-                    <span class="bangumi-info-label">总播放</span> <em>2263.6 万</em>
+                    <span class="bangumi-info-label">总播放</span> <em>2754.7 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-follow">
-                    <span class="bangumi-info-label">追番人数</span> <em>1541.4 万</em>
+                    <span class="bangumi-info-label">追番人数</span> <em>1543.2 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-coin">
-                    <span class="bangumi-info-label">硬币数</span> <em>6.1 万</em>
+                    <span class="bangumi-info-label">硬币数</span> <em>8.0 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-danmaku">
-                    <span class="bangumi-info-label">弹幕总数</span> <em>5.3 万</em>
+                    <span class="bangumi-info-label">弹幕总数</span> <em>7.0 万</em>
                 </span>
                 <span class="bangumi-info-item bangumi-info-item-score">
                     <span class="bangumi-info-label">评分</span> <em>-</em>
