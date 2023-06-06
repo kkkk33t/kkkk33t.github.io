@@ -6,7 +6,7 @@
   <link href="https://kkkk33t.github.io/atom.xml" rel="self"/>
   
   <link href="https://kkkk33t.github.io/"/>
-  <updated>2023-06-03T09:38:48.850Z</updated>
+  <updated>2023-06-06T03:13:01.329Z</updated>
   <id>https://kkkk33t.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://kkkk33t.github.io/2023/060123825.html"/>
     <id>https://kkkk33t.github.io/2023/060123825.html</id>
     <published>2023-06-01T15:43:32.000Z</published>
-    <updated>2023-06-03T09:38:48.850Z</updated>
+    <updated>2023-06-06T03:13:01.329Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;md教学&quot;&gt;&lt;a href=&quot;#md教学&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;1-md教学&quot;&gt;&lt;a href=&quot;#1-md教学&quot; class=&quot;headerlink&quot; title=&quot;1. md教学&quot;&gt;&lt;/a&gt;1.</summary>
         
       
     
@@ -43,6 +43,8 @@
     
     <category term="hexo" scheme="https://kkkk33t.github.io/tags/hexo/"/>
     
+    <category term="写作" scheme="https://kkkk33t.github.io/tags/%E5%86%99%E4%BD%9C/"/>
+    
   </entry>
   
   <entry>
@@ -50,15 +52,17 @@
     <link href="https://kkkk33t.github.io/2023/05311121.html"/>
     <id>https://kkkk33t.github.io/2023/05311121.html</id>
     <published>2023-05-31T02:24:46.000Z</published>
-    <updated>2023-06-03T09:39:23.115Z</updated>
+    <updated>2023-06-06T03:11:38.989Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;你好，欢迎来到我的个人博客，这是我的第一次写作，我在这篇文章交代了一些简单的博客内容，如果可以的话，我以后也会继续&lt;br&gt;记录更多内容和知识的。&lt;/p&gt;
-&lt;h1 id=&quot;这是一个博客简介&quot;&gt;&lt;a href=&quot;#这是一个博客简介&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;你好，欢迎来到我的个人博客，这是我的第一次写作，我在这篇文章交代了一些简单的博客内容，如果可以的话，我以后也会继续记录更多内容和知识的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;这是一个博客简介&quot;&gt;&lt;a</summary>
         
       
     
