@@ -58,12 +58,12 @@
 }
 
 @font-face{
-    font-family: 'myFont';
-    src: url('../font/myFont.ttf');
+    font-family: 'myfont';
+    src: url('../font/myfont.ttf');
 }
 
 body{
-    font-family: 'myFont';
+    font-family: 'myfont';
 }
 
 ol{
