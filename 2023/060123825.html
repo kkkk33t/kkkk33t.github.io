@@ -62,9 +62,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="KZE" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="KZE" type="application/atom+xml">
 </head>
 
 <body>
@@ -458,14 +458,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.1k
                 </div>
                 
 
@@ -477,6 +477,11 @@
                 
 
                 
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -591,8 +596,8 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
 </li>
 </ul>
 <h3 id="1-9-1-插入本地照片"><a href="#1-9-1-插入本地照片" class="headerlink" title="1.9.1 插入本地照片"></a>1.9.1 插入本地照片</h3><p><code>![描述图片的文字](图片本地路径) 例如： ![niubi](23-06-01/wallhaven-m3ppwy.jpg)</code><br><strong>注释：</strong>这里的路径可以是相对的，也可以是本地的。</p>
-<h3 id="1-9-2-插入网络图片"><a href="#1-9-2-插入网络图片" class="headerlink" title="1.9.2 插入网络图片"></a>1.9.2 插入网络图片</h3><p><code>![]( https://cdn.jsdelivr.net/gh/kkkk33t/cdntc/*img/*wallhaven-m3ppwy.jpg)</code><br>这种方式应该是公认的最好的方式了，不过重点是图床的选择，关于图床，我会再下一次更加详细的介绍</p>
-<h3 id="1-9-3-把图片存入markdown文件"><a href="#1-9-3-把图片存入markdown文件" class="headerlink" title="1.9.3  把图片存入markdown文件"></a>1.9.3  把图片存入markdown文件</h3><p>这种方式需要先将图片转换成base64编码格式，然后将图片内容放入Markdown文档中（所以，如果图片很大的话，Markdown文档也会变得很大），最后再引用图片。语法如下（描述文字可不写），第一行为图片的引用，第二行为图片的声明（一般可写在文档的最后）：<br>![描述图片的文字][图片声明][图片声明]:图片base64 编码内容<br>例如：<br><code>![描述][base64str][base64str]:data:image/png;base64,iVBORw0......</code><br>这种方式不太方便，使用频率极低，不建议使用</p>
+<h3 id="1-9-2-插入网络图片"><a href="#1-9-2-插入网络图片" class="headerlink" title="1.9.2 插入网络图片"></a>1.9.2 插入网络图片</h3><p><code>![](图片的网络链接)</code><br>这种方式应该是公认的最好的方式了，不过重点是图床的选择，关于图床，我会再下一次更加详细的介绍</p>
+<h3 id="1-9-3-把图片存入markdown文件"><a href="#1-9-3-把图片存入markdown文件" class="headerlink" title="1.9.3  把图片存入markdown文件"></a>1.9.3  把图片存入markdown文件</h3><p>将图片以base64编码的形式存入Markdown会增加文件大小，但这种方法的好处是可以直接将图片嵌入文档中，不需要另外引用图片文件。下面是具体的步骤：<br>将要存入 Markdown 文件的图片转换为 base64 编码格式，可以使用在线工具实现，例如：<br><code>https://www.base64-image.de/</code><br>在 Markdown 文件中添加以下语法：<br><code>![描述文字](data:image/png;base64,base64编码内容)</code>其中，描述文字 是图片的文字描述，base64编码内容 是第一步得到的 base64 编码字符串。<br>如果有多张图片需要存入 Markdown 文件中，可以单独声明图片的 base64 字符串，例如：<br><code>[图片1]: data:image/png;base64,base64编码内容1 [图片2]: data:image/png;base64,base64编码内容2</code><br>正文内容中插入图片：<br><code>![描述文字1][图片1] ![描述文字2][图片2]</code><br>这种方式不太方便，使用频率极低，不建议使用</p>
 <h3 id="1-9-4-使用HTML-lt-img-gt-标签"><a href="#1-9-4-使用HTML-lt-img-gt-标签" class="headerlink" title="1.9.4 使用HTML<img> 标签"></a>1.9.4 使用HTML<code>&lt;img&gt; </code>标签</h3><p>我个人认为这是一种很好的方式，主要是可以控制图片的大小比较方便，上面几种方式的调整大小方式我还在研究，具体请看我以后的补充吧<br>举例：</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;img src="https://cdn.jsdelivr.net/gh/kkkk33t/cdntc/*img/*wallhaven-m3ppwy.jpg" width=100/&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -684,37 +689,36 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
 <li>列表2</li>
 </ul>
 </li>
-<li><p>分隔符</p>
+<li><p>分隔符<br>`- 第一部分<br>—``</p>
 <ul>
-<li>第一部分</li>
+<li>第二部分<br>— ``</li>
+<li>第三部分</li>
+<li>第四部分<br>`</li>
 </ul>
 </li>
-</ul>
-<hr>
-<pre><code>- 第二部分
-</code></pre>
-<hr>
-<pre><code>- 第三部分
-- 第四部分
-</code></pre>
-<ul>
-<li>超级链接</li>
+<li><p>超级链接</p>
+</li>
 </ul>
 <p><code>- &lt;https://www.google.com&gt;</code><br><code>- [Google](https://www.google.com)</code></p>
 <ul>
-<li><p>文字修饰</p>
-<ul>
+<li>文字修饰<ul>
 <li><em>斜体</em></li>
 <li><strong>加粗</strong></li>
-<li><del>删除线</del></li>
-</ul>
+<li><del>删除线</del><blockquote>
+<p>代码块<br><code>- </code>单行代码块`</p>
+</blockquote>
 </li>
-<li><h2 id="代码块-单行代码块"><a href="#代码块-单行代码块" class="headerlink" title="代码块  - 单行代码块"></a>代码块<br>  - <code>单行代码块</code></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">多行代码块1
+<li>`<blockquote>
+<pre><code class="shell">多行代码块1
 多行代码块2
-多行代码块3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>其效果如下：</p>
+多行代码块3
+</code></pre>
+</blockquote>
 </li>
 </ul>
+</li>
+</ul>
+<p>其效果如下：</p>
 <p align="center">    
 <img src="https://www.lengxi.net/zb_users/upload/2019/03/20190305164928_81960.gif" data-original="https://pic1.zhimg.com/80/v2-13f7a46fa02acf6f285545576052a9a8_1440w.webp" width="400">
 </p>
@@ -1500,9 +1504,11 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.4k</span>
+                        class="white-color">3.5k</span>
             
             
+            
+                
             
             
                 <span id="busuanzi_container_site_pv">
@@ -1575,7 +1581,7 @@ c<span class="token operator">=</span>a<span class="token operator">+</span>b<sp
             </span>
             
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/kkkk33t" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1801,16 +1807,6 @@ $(function () {
 
     <!-- Baidu Analytics -->
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?9c844b91278b99815b3cc2eab86a742e";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
     <!-- Baidu Push -->
 
 <script>
@@ -1830,6 +1826,8 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
