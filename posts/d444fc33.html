@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>markdown语法知识 | 远枫博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="theme-color" content="#FFA500">
+
+  <link rel="canonical" href="http://example.com/posts/d444fc33.html">
+
+  <link rel="shortcut icon" href="https://cdn.jsdmirror.com/gh/kkkk33t/cdntc/*img/*/favicon.ico">
+
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+
+  
+  <meta name="description" content="1. md教学这是一个md格式的教学文件，主要用于进行md文件练习,文章撰写的比较仓促，如有不足和错误，希望指出，感谢您的理解和支持 1.1 md目录TOC会自动为当前文档生成目录，目录是根据当前文档的标题来生产的，TOC写在文档什么位置，目录就会出现在哪个位置  有些网站不支持TOC功能  1.2 md文字修饰 在markdown文档中，可以为文字添加加粗，斜体，删除线，下划线，当然这些效果也是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown语法知识">
+<meta property="og:url" content="http://example.com/posts/d444fc33.html">
+<meta property="og:site_name" content="远枫博客">
+<meta property="og:description" content="1. md教学这是一个md格式的教学文件，主要用于进行md文件练习,文章撰写的比较仓促，如有不足和错误，希望指出，感谢您的理解和支持 1.1 md目录TOC会自动为当前文档生成目录，目录是根据当前文档的标题来生产的，TOC写在文档什么位置，目录就会出现在哪个位置  有些网站不支持TOC功能  1.2 md文字修饰 在markdown文档中，可以为文字添加加粗，斜体，删除线，下划线，当然这些效果也是">
+<meta property="og:locale">
+<meta property="og:image" content="https://t.mwm.moe/fj">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-13f7a46fa02acf6f285545576052a9a8_1440w.webp">
+<meta property="article:published_time" content="2023-06-01T01:22:23.000Z">
+<meta property="article:modified_time" content="2025-02-26T12:02:27.877Z">
+<meta property="article:author" content="zuko">
+<meta property="article:tag" content="技能">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://t.mwm.moe/fj">
+
+  <style>
+    :root {
+      --sea-color-primary: #FFA500;
+    }
+  </style>
+
+  
+<script src="/js/theme_mode.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <header class="sea-header">
+    <nav class="sea-nav-wrap">
+  <h1 class="sea-nav-logo" title="">
+    <a href="/">远枫博客</a>
+  </h1>
+  <div class="sea-nav-menus">
+    <div id="sea-nav-toggle">
+      <svg t="1716965724278" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10878" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M950.857143 768v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429v-73.142857c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z m0-292.571429v73.142858c0 20.004571-16.566857 36.571429-36.571429 36.571428H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571428v-73.142858c0-20.004571 16.566857-36.571429 36.571429-36.571428h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571428z m0-292.571428v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429V182.857143c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z" p-id="10879"></path></svg>
+    </div>
+
+    <div class="sea-menu-wrap">
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/articles/"
+    >
+      文章
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/categories/"
+    >
+      分类
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/tags/"
+    >
+      标签
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/archives/"
+    >
+      归档
+    </a>
+  
+
+  <span class="sea-menu-sep">|</span>
+
+  
+
+  <span class="sea-menu-icon" id="sea-theme-dark">
+    <svg t="1725413107294" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10118" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M557.553778 976.355556c-257.265778 0-466.56-207.160889-466.56-464.426667 0-253.923556 206.577778-464.284444 460.501333-464.284445h0.355556c10.766222 0 20.622222 3.953778 25.443555 13.610667 4.878222 9.756444 3.740444 20.394667-2.915555 29.027556-55.722667 72.220444-85.162667 158.108444-85.162667 249.372444 0 225.891556 183.779556 409.386667 409.671111 409.386667l5.248-0.256c10.325333-0.142222 20.977778 5.859556 25.841778 15.644444a28.302222 28.302222 0 0 1-2.915556 30.051556C837.902222 910.08 703.203556 976.355556 557.553778 976.355556zM495.274667 105.016889C299.192889 135.281778 147.882667 306.161778 147.882667 509.809778c0 225.877333 183.779556 409.656889 409.671111 409.656889 108.686222 0 210.403556-42.055111 286.577778-116.977778-231.566222-27.192889-411.804444-224.625778-411.804445-463.36 0-83.427556 21.617778-163.299556 62.947556-234.112z" fill="" p-id="10119"></path><path d="M578.830222 879.132444c-186.865778 0-345.784889-133.418667-377.841778-317.269333a14.222222 14.222222 0 1 1 28.017778-4.878222c29.681778 170.183111 176.810667 293.703111 349.824 293.703111a14.222222 14.222222 0 1 1 0 28.444444zM209.991111 531.2c-7.537778 0-13.838222-6.997333-14.193778-14.606222-0.312889-6.584889-0.483556-13.795556-0.483555-20.465778 0-7.864889 6.357333-14.492444 14.222222-14.492444s14.222222 6.229333 14.222222 14.094222c0 6.229333 0.170667 13.425778 0.455111 19.584 0.369778 7.850667-5.674667 15.886222-13.525333 15.886222h-0.696889z" fill="" p-id="10120"></path><path d="M622.350222 309.930667m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10121"></path><path d="M787.072 188.273778m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10122"></path><path d="M731.960889 415.303111m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" p-id="10123"></path></svg>
+  </span>
+  <span class="sea-menu-icon" id="sea-theme-light">
+    <svg t="1725410359322" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4274" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 768c-141.376 0-256-114.624-256-256s114.624-256 256-256 256 114.624 256 256-114.624 256-256 256z m0-85.333333a170.666667 170.666667 0 1 0 0-341.333334 170.666667 170.666667 0 0 0 0 341.333334zM469.333333 85.333333a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0V85.333333z m0 768a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0v-85.333334zM85.333333 554.666667a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334H85.333333z m768 0a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334h-85.333334zM161.834667 222.165333a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m576 576a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m-515.669334 64a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z m576-576a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z" p-id="4275"></path></svg>
+  </span>
+
+  <span id="sea-menu-close-icon">
+    <svg t="1725435896874" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4408" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M556.8 512l265.6-265.6c12.8-12.8 12.8-32 0-44.8s-32-12.8-44.8 0L512 467.2 246.4 201.6c-12.8-12.8-32-12.8-44.8 0s-12.8 32 0 44.8l265.6 265.6-265.6 265.6c-12.8 12.8-12.8 32 0 44.8 6.4 6.4 12.8 9.6 22.4 9.6s16-3.2 22.4-9.6l265.6-265.6 265.6 265.6c6.4 6.4 16 9.6 22.4 9.6s16-3.2 22.4-9.6c12.8-12.8 12.8-32 0-44.8L556.8 512z" p-id="4409"></path></svg>
+  </span>
+</div>
+<div id="sea-nav-dimmer"></div>
+  </div>
+</nav>
+  </header>
+  <main id="sea-main-wrapper">
+    <article class="sea-page-card-wrapper">
+  <header class="sea-article-header">
+    <h1 class="sea-article-title">markdown语法知识</h1>
+    
+      <div class="sea-post-meta sea-post-meta__center">
+        <div class="sea-post-time">
+  <svg t="1716964550804" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2621" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M805.49888 981.49888l-602.3168-0.76288c-86.59456-8.192-154.56768-81.3056-154.56768-170.01472L48.6144 291.73248c0-94.1568 76.60032-170.75712 170.7776-170.75712l586.10176 0c94.1568 0 170.73152 76.60032 170.73152 170.75712L976.22528 810.7008C976.2304 904.87296 899.63008 981.49888 805.49888 981.49888L805.49888 981.49888zM219.3664 190.57152c-55.79776 0-101.20192 45.38368-101.20192 101.18144l0 518.96832c0 55.79776 45.40416 101.20704 101.20192 101.20704l586.13248 0c55.77728 0 101.16096-45.40928 101.16096-101.20704L906.65984 291.73248c0-55.79776-45.38368-101.18656-101.16096-101.18656L219.3664 190.54592 219.3664 190.57152zM698.84416 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L745.22624 244.1216C745.22624 269.7472 724.46976 290.51904 698.84416 290.51904L698.84416 290.51904zM315.65824 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L362.04032 244.1216C362.04032 269.7472 341.28896 290.51904 315.65824 290.51904L315.65824 290.51904zM534.8864 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C581.26848 774.01088 560.4864 794.78784 534.8864 794.78784L534.8864 794.78784zM930.79552 452.608 121.24672 452.608c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l809.5744 0c25.6 0 46.38208 20.77696 46.38208 46.38208C977.2032 431.82592 956.42624 452.608 930.79552 452.608L930.79552 452.608zM327.92576 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208C374.30784 628.25472 353.52576 649.03168 327.92576 649.03168L327.92576 649.03168zM534.8864 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208S560.4864 649.03168 534.8864 649.03168L534.8864 649.03168zM741.27872 649.03168l-44.26752 0c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.77696 46.38208 46.38208C787.6608 628.25472 766.90944 649.03168 741.27872 649.03168L741.27872 649.03168zM327.92576 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C374.30784 774.01088 353.52576 794.78784 327.92576 794.78784L327.92576 794.78784zM741.27872 794.78784l-44.26752 0c-25.60512 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.78208 46.38208 46.38208C787.6608 774.01088 766.90944 794.78784 741.27872 794.78784L741.27872 794.78784z" p-id="2622"></path></svg>
+  <time datetime="2023-06-01T01:22:23.000Z">2023-06-01</time>
+</div>
+        
+  <div class="sea-post-categories">
+    <svg t="1716964680422" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4550" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M810.666667 85.333333a85.333333 85.333333 0 0 1 85.333333 85.333334v152.021333c36.821333 9.493333 64 42.88 64 82.645333v405.333334a128 128 0 0 1-128 128H192a128 128 0 0 1-128-128V298.666667a85.376 85.376 0 0 1 64-82.645334V170.666667a85.333333 85.333333 0 0 1 85.333333-85.333334h597.333334zM128.149333 296.170667L128 298.666667v512a64 64 0 0 0 60.245333 63.893333L192 874.666667h640a64 64 0 0 0 63.893333-60.245334L896 810.666667V405.333333a21.333333 21.333333 0 0 0-18.837333-21.184L874.666667 384H638.165333l-122.069333-101.717333a21.333333 21.333333 0 0 0-10.688-4.736l-2.986667-0.213334H149.333333a21.333333 21.333333 0 0 0-21.184 18.837334zM535.189333 213.333333l127.978667 106.666667H832V170.666667a21.333333 21.333333 0 0 0-18.837333-21.184L810.666667 149.333333H213.333333a21.333333 21.333333 0 0 0-21.184 18.837334L192 170.666667v42.666666h343.168z" p-id="4551"></path></svg>
+    <a class="category-link" href="/categories/blog/">blog</a>
+  </div>
+
+        
+  <div class="sea-post-tags">
+    <svg t="1716964811431" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6117" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M384 977.152c-20.5312 0-39.8336-7.9872-54.3232-22.4256l-260.4032-260.4032c-14.4896-14.4896-22.4256-33.7408-22.4256-54.3232s7.9872-39.8336 22.4256-54.3232l439.6032-439.6032c24.9344-24.9344 70.2464-43.7248 105.5232-43.7248h230.4c42.3424 0 76.8 34.4576 76.8 76.8v230.4c0 35.2256-18.7904 80.5888-43.6736 105.5232l-439.6032 439.6032a76.1856 76.1856 0 0 1-54.3232 22.4256zM614.4 153.6c-21.248 0-54.272 13.6704-69.2736 28.7232l-439.6032 439.6032c-4.8128 4.8128-7.424 11.2128-7.424 18.1248s2.6624 13.312 7.424 18.0736l260.4032 260.4032c4.8128 4.8128 11.2128 7.424 18.1248 7.424s13.312-2.6624 18.1248-7.424l439.6032-439.6032c15.0016-15.0016 28.7232-48.0768 28.7232-69.3248V179.2a25.6 25.6 0 0 0-25.6-25.6h-230.4z" p-id="6118"></path><path d="M742.4 358.4c-42.3424 0-76.8-34.4576-76.8-76.8S700.0576 204.8 742.4 204.8s76.8 34.4576 76.8 76.8S784.7424 358.4 742.4 358.4z m0-102.4a25.6 25.6 0 1 0 0 51.2 25.6 25.6 0 0 0 0-51.2z" p-id="6119"></path></svg>
+    <a class="tag-link" href="/tags/markdown/" rel="tag">markdown</a> , <a class="tag-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a>
+  </div>
+
+      </div>
+    
+  </header>
+  <div class="sea-doc">
+    
+    
+      <div class="sea-article-catalog">
+        <h2>目录</h2>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-md%E6%95%99%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">1. md教学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-md%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 md目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-md%E6%96%87%E5%AD%97%E4%BF%AE%E9%A5%B0"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 md文字修饰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-md%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 md分割线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E5%BC%95%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.7.</span> <span class="toc-text">1.7 表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%E8%B6%85%E7%BA%A7%E9%93%BE%E6%8E%A5"><span class="toc-number">1.8.</span> <span class="toc-text">1.8 超级链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-%E5%9B%BE%E7%89%87"><span class="toc-number">1.9.</span> <span class="toc-text">1.9 图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-1-%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E7%85%A7%E7%89%87"><span class="toc-number">1.9.1.</span> <span class="toc-text">1.9.1 插入本地照片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-2-%E6%8F%92%E5%85%A5%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87"><span class="toc-number">1.9.2.</span> <span class="toc-text">1.9.2 插入网络图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-3-%E6%8A%8A%E5%9B%BE%E7%89%87%E5%AD%98%E5%85%A5markdown%E6%96%87%E4%BB%B6"><span class="toc-number">1.9.3.</span> <span class="toc-text">1.9.3  把图片存入markdown文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-4-%E4%BD%BF%E7%94%A8HTML-%E6%A0%87%E7%AD%BE"><span class="toc-number">1.9.4.</span> <span class="toc-text">1.9.4 使用HTML&lt;img&gt; 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-5-%E8%A1%A5%E5%85%85%EF%BC%9A%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8%E6%A0%87%E7%AD%BE%E6%9B%B4%E6%94%B9%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%EF%BC%8C%E6%94%AF%E6%8C%81%E8%AE%BE%E5%AE%9A%E5%AE%BD%E5%BA%A6%E3%80%81%E9%AB%98%E5%BA%A6%E3%80%81%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%E7%AD%89%E5%B1%9E%E6%80%A7%E3%80%82"><span class="toc-number">1.9.5.</span> <span class="toc-text">1.9.5 补充：通过使用&lt;img&gt;标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-5-1-%E8%B0%83%E6%95%B4%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-number">1.9.5.1.</span> <span class="toc-text">1.9.5.1 调整对齐方式一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-5-2-%E8%B0%83%E6%95%B4%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%88%E6%8E%A8%E8%8D%90"><span class="toc-number">1.9.5.2.</span> <span class="toc-text">1.9.5.2 调整对齐方式二（推荐)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-5-3-%E5%AE%9E%E7%8E%B0%E5%B7%A6%E5%9B%BE%E5%8F%B3%E6%96%87%E6%88%96%E5%B7%A6%E6%96%87%E5%8F%B3%E5%9B%BE%E7%9A%84%E6%95%88%E6%9E%9C%E3%80%82"><span class="toc-number">1.9.5.3.</span> <span class="toc-text">1.9.5.3 实现左图右文或左文右图的效果。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-5-4-%E7%BB%99%E5%9B%BE%E5%83%8F%E5%8A%A0%E4%B8%AA%E6%A0%87%E6%B3%A8%EF%BC%9A"><span class="toc-number">1.9.5.4.</span> <span class="toc-text">1.9.5.4 给图像加个标注：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-0-%E6%96%87%E5%AD%97%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-number">1.10.</span> <span class="toc-text">2.0 文字的上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%96%87%E5%AD%97%E7%BC%A9%E5%86%99"><span class="toc-number">1.11.</span> <span class="toc-text">2.1 文字缩写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Markmap-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="toc-number">1.12.</span> <span class="toc-text">2.3 Markmap 思维导图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E7%89%B9%E5%88%AB%E6%84%9F%E8%B0%A2"><span class="toc-number">1.13.</span> <span class="toc-text">2.4 特别感谢</span></a></li></ol></li></ol>
+      </div>
+    
+    <div class="sea-article-content">
+      <h1 id="1-md教学"><a href="#1-md教学" class="headerlink" title="1. md教学"></a>1. md教学</h1><p>这是一个md格式的教学文件，主要用于进行md文件练习,文章撰写的比较仓促，如有不足和错误，希望指出，感谢您的理解和支持</p>
+<h2 id="1-1-md目录"><a href="#1-1-md目录" class="headerlink" title="1.1 md目录"></a>1.1 md目录</h2><p>TOC会自动为当前文档生成目录，目录是根据当前文档的标题来生产的，TOC写在文档什么位置，目录就会出现在哪个位置</p>
+<blockquote>
+<p>有些网站不支持TOC功能</p>
+</blockquote>
+<h2 id="1-2-md文字修饰"><a href="#1-2-md文字修饰" class="headerlink" title="1.2 md文字修饰"></a>1.2 md文字修饰</h2><blockquote>
+<p>在markdown文档中，可以为文字添加加粗，斜体，删除线，下划线，当然这些效果也是可以叠加的，例如英文就比较适宜使用斜体，例如：*This is a test mark down text.*而当我们发现已经写过的内容存在误导他人或者本身就错误明显的时候，我们可以使用删除字符来删除文字，比如：<del>太阳是从东边出来的</del>当然除了使用加粗文字来强敌哦之外，你也可以使用为句子画横线的方法，例如：<u>使用这种方法就可以达到画横线的目的</u></p>
+</blockquote>
+<h2 id="1-3-md分割线"><a href="#1-3-md分割线" class="headerlink" title="1.3 md分割线"></a>1.3 md分割线</h2><p>在md文件中分割线是使用三个星号或者三个”-“来实现的，具体效果，你可以看我标题之间的内容。</p>
+<h2 id="1-4-列表"><a href="#1-4-列表" class="headerlink" title="1.4 列表"></a>1.4 列表</h2><ul>
+<li>有序列表<br>有序列表是使用数字和点来完成的，这个很好理解，因为我们平时的任务清单也是类似这个形式，比如把大象放进冰箱有几步：</li>
+</ul>
+<ol>
+<li>打开冰箱门</li>
+<li>把大象放进冰箱</li>
+<li>关上冰箱门</li>
+</ol>
+<ul>
+<li>无序列表<br>无序列表非常简单，只需要用加减号或者星号即可实现，还是刚才那个例子<ul>
+<li>打开冰箱门</li>
+<li>把大象放进冰箱</li>
+<li>关上冰箱门</li>
+</ul>
+</li>
+<li>待办列表<br>待办列表主要是用来表现事情是否完成比如下面的内容：<ul>
+<li>[] 做博客网站</li>
+<li>[] 复习高数和数逻</li>
+<li><input checked="" disabled="" type="checkbox"> 摆烂</li>
+</ul>
+</li>
+<li>列表嵌套<br>这一部分的内容我觉得不需要做什么教学，实在是很简单啦，就是在下一行前用一次Tab即可</li>
+</ul>
+<h2 id="1-5-引用"><a href="#1-5-引用" class="headerlink" title="1.5 引用"></a>1.5 引用</h2><ul>
+<li>一级引用<br>引用使用的是大于号，例如我下面的句子：<blockquote>
+<p>横眉冷对千夫指，俯首甘为孺子牛</p>
+</blockquote>
+</li>
+<li>多级引用<br>几级引用，就有几个&gt;,自己试着就行了</li>
+</ul>
+<h2 id="1-6-代码块"><a href="#1-6-代码块" class="headerlink" title="1.6 代码块"></a>1.6 代码块</h2><p>代码的用法也是两种，行内代码和多行代码。下面是一些具体例子：</p>
+<ol>
+<li>行内代码<br>C语言第一课上的是<code>Hello,World</code></li>
+<li>多行代码</li>
+</ol>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">;</span>
+<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token operator">=</span>a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注释：如果想实现多行代码的缩进排版，前面一定要有空行，同时每行要有一个制表符</p>
+</blockquote>
+<h2 id="1-7-表格"><a href="#1-7-表格" class="headerlink" title="1.7 表格"></a>1.7 表格</h2><p>表格的书写方法也是比较容易的，用竖线来分隔不同的单元格，使用横线-来分隔表头和其他行，下面我以遗传病的分类为例，写一个内容吧。</p>
+<table>
+<thead>
+<tr>
+<th>常见遗传病</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单基因遗传病</td>
+<td>白化病、先天性耳聋</td>
+</tr>
+<tr>
+<td>多基因遗传病</td>
+<td>糖尿病、高血压</td>
+</tr>
+<tr>
+<td>染色体病</td>
+<td>唐氏综合征</td>
+</tr>
+<tr>
+<td>体细胞遗传病</td>
+<td>恶性肿瘤</td>
+</tr>
+<tr>
+<td>线粒体遗传病</td>
+<td>Leber遗传性视神经病</td>
+</tr>
+</tbody></table>
+<h2 id="1-8-超级链接"><a href="#1-8-超级链接" class="headerlink" title="1.8 超级链接"></a>1.8 超级链接</h2><ol>
+<li>表示方法<br>超级链接的表示方式如下：<br>[ 超级链接文字 ] (网址)，所以最后你看到的实际上只有文字了，但是其实文字是链接到一个网址的,比如：<code>[我的博客] (https://kkkk33t.github.io/)</code></li>
+<li>直接显示链接<br>使用&lt;&gt; 符号将连接地址括住：比如<code>&lt; https://www.baidu.com/ &gt;</code></li>
+<li>使用锚点<br>使用锚点，首先是先定义锚点，然后再引用锚点。关于锚点的使用我会在下一次更加详细的介绍</li>
+</ol>
+<h2 id="1-9-图片"><a href="#1-9-图片" class="headerlink" title="1.9 图片"></a>1.9 图片</h2><p>插入图片有四种方式，分别是：</p>
+<ul>
+<li>插入本地图片</li>
+<li>插入网络图片</li>
+<li>把图片存入Markdown 文件</li>
+<li>使用HTML<code> &lt;img&gt;</code> 标签<blockquote>
+<p>引入图片的基本格式是<code>![描述](路径)，你可以选择适合自己的方式。</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-9-1-插入本地照片"><a href="#1-9-1-插入本地照片" class="headerlink" title="1.9.1 插入本地照片"></a>1.9.1 插入本地照片</h3><p><code>![描述图片的文字](图片本地路径) 例如： ![niubi](23-06-01/wallhaven-m3ppwy.jpg)</code><br>**注释：**这里的路径可以是相对的，也可以是本地的。</p>
+<h3 id="1-9-2-插入网络图片"><a href="#1-9-2-插入网络图片" class="headerlink" title="1.9.2 插入网络图片"></a>1.9.2 插入网络图片</h3><p><code>![](图片的网络链接)</code><br>这种方式应该是公认的最好的方式了，不过重点是图床的选择，关于图床，我会再下一次更加详细的介绍</p>
+<h3 id="1-9-3-把图片存入markdown文件"><a href="#1-9-3-把图片存入markdown文件" class="headerlink" title="1.9.3  把图片存入markdown文件"></a>1.9.3  把图片存入markdown文件</h3><p>将图片以base64编码的形式存入Markdown会增加文件大小，但这种方法的好处是可以直接将图片嵌入文档中，不需要另外引用图片文件。下面是具体的步骤：<br>将要存入 Markdown 文件的图片转换为 base64 编码格式，可以使用在线工具实现，例如：<br><code>https://www.base64-image.de/</code><br>在 Markdown 文件中添加以下语法：<br><code>![描述文字](data:image/png;base64,base64编码内容)</code>其中，描述文字 是图片的文字描述，base64编码内容 是第一步得到的 base64 编码字符串。<br>如果有多张图片需要存入 Markdown 文件中，可以单独声明图片的 base64 字符串，例如：<br><code>[图片1]: data:image/png;base64,base64编码内容1 [图片2]: data:image/png;base64,base64编码内容2</code><br>正文内容中插入图片：<br><code>![描述文字1][图片1] ![描述文字2][图片2]</code><br>这种方式不太方便，使用频率极低，不建议使用</p>
+<h3 id="1-9-4-使用HTML-标签"><a href="#1-9-4-使用HTML-标签" class="headerlink" title="1.9.4 使用HTML&lt;img&gt; 标签"></a>1.9.4 使用HTML<code>&lt;img&gt; </code>标签</h3><p>我个人认为这是一种很好的方式，主要是可以控制图片的大小比较方便，上面几种方式的调整大小方式我还在研究，具体请看我以后的补充吧<br>举例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;kkkk33t&#x2F;cdntc&#x2F;*img&#x2F;*wallhaven-m3ppwy.jpg&quot; width&#x3D;100&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="1-9-5-补充：通过使用标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。"><a href="#1-9-5-补充：通过使用标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。" class="headerlink" title="1.9.5 补充：通过使用&lt;img&gt;标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。"></a>1.9.5 补充：通过使用<code>&lt;img&gt;</code>标签更改图片尺寸，支持设定宽度、高度、对齐方式等属性。</h3><pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;b937aa6a992d47d9b205f519bcbbc111.png&quot;  width&#x3D;&quot;600&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>说明：属性后面的数值也以写成百分比的形式，如width &#x3D; “60%”<br>带尺寸的图片，需同时指定：width &#x3D; “600”，height &#x3D; “600”<br>宽度确定高度等比例的图片，只要指定：width &#x3D; “600”<br>高度确定宽度等比例的图片，只要指定：height &#x3D; “600”</p>
+</blockquote>
+<h4 id="1-9-5-1-调整对齐方式一"><a href="#1-9-5-1-调整对齐方式一" class="headerlink" title="1.9.5.1 调整对齐方式一"></a>1.9.5.1 调整对齐方式一</h4><p>可通过在<code>&lt;img&gt;</code>标签内添加align&#x3D;“center”属性修改图片的对齐方式</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;b937aa6a992d47d9b205f519bcbbc111.png&quot;  align &#x3D; &quot;right&quot;  width&#x3D;&quot;600&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>说明：该种方法也可以实现左图右字或左字右图的效果<br>居中对齐：align &#x3D; “middle”，不知道为啥在CSDN中测试的时候居中不起作用<br>靠左对齐：align &#x3D; “left”<br>靠右对齐：align &#x3D; “right”</p>
+</blockquote>
+<h4 id="1-9-5-2-调整对齐方式二（推荐"><a href="#1-9-5-2-调整对齐方式二（推荐" class="headerlink" title="1.9.5.2 调整对齐方式二（推荐)"></a>1.9.5.2 调整对齐方式二（推荐)</h4><p>也可通过将<code>&lt;img&gt;</code>标签包裹在<code>&lt;p align=“center”&gt; . . . &lt;/p&gt;</code>标签内修改图片的对齐方式。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p align &#x3D; &quot;center&quot;&gt;    
+&lt;img  src&#x3D;&quot;https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;b937aa6a992d47d9b205f519bcbbc111.png&quot; width&#x3D;&quot;400&quot; &#x2F;&gt;
+&lt;&#x2F;p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>通过这种方式还可以实现多张图片的并列排版，只需在<code>&lt;p align=“center”&gt; . . . &lt;/p&gt;</code>标签内添加多行<code>&lt;img&gt;</code>标签。每行图片的个数会根据图片的大小及浏览器窗口的大小自动进行调整。</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">align</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>说明：对单张和多张图片均有效,使用html插入图片时<code>align=</code>可以省略，但是将图片右置的时候不能省略</p>
+</blockquote>
+<h4 id="1-9-5-3-实现左图右文或左文右图的效果。"><a href="#1-9-5-3-实现左图右文或左文右图的效果。" class="headerlink" title="1.9.5.3 实现左图右文或左文右图的效果。"></a>1.9.5.3 实现左图右文或左文右图的效果。</h4><p>可通过将<code>&lt;img&gt;</code>标签包裹在<code>&lt;p &gt; . . . &lt;/p&gt;</code>标签内，并在<code>&lt;img&gt;</code>标签内添加align&#x3D;“left”属性来实现。  </p>
+<p>（1）左图右文<br>说明：需要左右混排的文字放在<code>&lt;p &gt; . . . &lt;/p&gt;</code>标签内，且需在<code>&lt;img&gt;</code>标签行的下面。放在<code>&lt;p &gt; . . . &lt;/p&gt;</code>标签外的排版为正常的上下排版样式。<br>左图右文：align &#x3D; “left”<br>左文右图：align &#x3D; “right”  </p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://img-blog.csdnimg.cn/b937aa6a992d47d9b205f519bcbbc111.png<span class="token punctuation">"</span></span>  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span>  <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。文字在右边，图片在左边。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-9-5-4-给图像加个标注："><a href="#1-9-5-4-给图像加个标注：" class="headerlink" title="1.9.5.4 给图像加个标注："></a>1.9.5.4 给图像加个标注：</h4><center>
+<img src="https://t.mwm.moe/fj" width="25%" height="25%" />
+
+<p>Figure 1. Lena</p>
+</center>
+<br/>
+<br/>
+
+<h2 id="2-0-文字的上下标"><a href="#2-0-文字的上下标" class="headerlink" title="2.0 文字的上下标"></a>2.0 文字的上下标</h2><p>上标使用<sup>，下标使用<sub>，如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">下标：X&lt;sub&gt;2&lt;&#x2F;sub&gt;
+上标：Y&lt;sup&gt;2&lt;&#x2F;sup&gt;
+下标文字: X&lt;sub&gt;上标文字&lt;&#x2F;sub&gt;
+上标文字: Y&lt;sup&gt;上标文字&lt;&#x2F;sup&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果如下：<br>下标：X<sub>2</sub><br><br/><br>上标：Y<sup>2</sup><br><br/><br>下标文字: X<sub>	下标文字</sub><br><br/>	<br>上标文字: Y<sup>	上标文字</sup></p>
+<h2 id="2-1-文字缩写"><a href="#2-1-文字缩写" class="headerlink" title="2.1 文字缩写"></a>2.1 文字缩写</h2><p>文字缩写使用HTML <abbr> 标签，如下所示：</p>
+<p><code>&lt;abbr title=&quot;Hyper Text Markup Language&quot;&gt;HTML&lt;/abbr&gt; 是一种标记语言。</code></p>
+<p>效果如下：</p>
+<p><abbr title="Hyper Text Markup Language">HTML</abbr> 是一种标记语言。</p>
+<h2 id="2-3-Markmap-思维导图"><a href="#2-3-Markmap-思维导图" class="headerlink" title="2.3 Markmap 思维导图"></a>2.3 Markmap 思维导图</h2><p>Markmap 是一个支持 Markdown 语法的思维导图工具，通过Markmap，你可以使用Markdown 语法来生成思维导图。Markmap 开源免费，简单易用。你可以在这里 将你写的Markdown 文档转换为思维导图。<br>在Markmap 中支持的Markdown 符号有：</p>
+<ul>
+<li><p>标题符号#</p>
+</li>
+<li><p>无须列表符号-</p>
+</li>
+<li><p>分隔符—</p>
+</li>
+<li><p>超级链接符号<a href=""></a> 和&lt;&gt;</p>
+</li>
+<li><p>文字修饰，例如加粗，斜体，删除线</p>
+</li>
+<li><p>代码块，包括行内代码块和多行代码块<br>Markmap 支持:</p>
+</li>
+<li><p>标题符号</p>
+<ul>
+<li>一级标题</li>
+<li>二级标题</li>
+<li>三级标题</li>
+</ul>
+</li>
+<li><p>无序列表</p>
+<ul>
+<li>列表1</li>
+<li>列表2</li>
+</ul>
+</li>
+<li><p>分隔符<br>&#96;- 第一部分<br>—&#96;&#96;</p>
+<ul>
+<li>第二部分<br>— &#96;&#96;</li>
+<li>第三部分</li>
+<li>第四部分<br>&#96;</li>
+</ul>
+</li>
+<li><p>超级链接</p>
+</li>
+</ul>
+<p><code>- &lt;https://www.google.com&gt;</code><br><code>- [Google](https://www.google.com)</code></p>
+<ul>
+<li>文字修饰<ul>
+<li><em>斜体</em></li>
+<li><strong>加粗</strong></li>
+<li><del>删除线</del><blockquote>
+<p>代码块<br><code>- </code>单行代码块&#96;</p>
+</blockquote>
+</li>
+<li>&#96;<blockquote>
+<pre><code class="language-shell">多行代码块1
+多行代码块2
+多行代码块3
+</code></pre>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>其效果如下：</p>
+<p align = "center">    
+<img  src="https://pic1.zhimg.com/80/v2-13f7a46fa02acf6f285545576052a9a8_1440w.webp" width="400" />
+</p>
+
+<h2 id="2-4-特别感谢"><a href="#2-4-特别感谢" class="headerlink" title="2.4 特别感谢"></a>2.4 特别感谢</h2><p>这篇文章我引用了三位大佬的内容和部分图片，在此特别为他们送上感谢，大家有兴趣也可以去看看他们的文章。<br><strong>引用声明：</strong></p>
+<ol>
+<li>CSDN博主「看我放个大招」的原创文章，遵循CC 4.0 BY-SA版权协议<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/tugepaopaoo/article/details/130196496">https://blog.csdn.net/tugepaopaoo/article/details/130196496</a></li>
+<li>CSDN博主「yhl_leo」的原创文章，遵循CC 4.0 BY-SA版权协议<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yhl_leo/article/details/50099843">https://blog.csdn.net/yhl_leo/article/details/50099843</a></li>
+<li>知乎博主「码农充电站」的原创文章，遵循CC 4.0 BY-SA版权协议<br>原文链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136440613">https://zhuanlan.zhihu.com/p/136440613</a></li>
+</ol>
+
+    </div>
+  </div>
+
+  
+    
+  <div class="sea-prev-next-wrapper">
+    
+      <div class="prev">
+        <span><</span>
+        <a class="link" href="/posts/10d6323.html">
+          nushell配置及使用体会
+        </a>
+      </div>
+    
+    
+      <div class="next">
+        <a class="link" href="/posts/892af2b6.html">
+          Welcome to use Hexo Theme Keep
+        </a>
+        <span>></span>
+      </div>
+    
+  </div>
+
+  
+</article>
+
+
+  </main>
+  <footer id="sea-footer-container">
+  <div class="sea-footer-row">
+    <div class="sea-footer-menu-link">
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://github.com/xieyangyuyue"
+        >
+          Github
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://gitee.com/hai_zou"
+        >
+          Gitee
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+    </div>
+  </div>
+  
+  
+  <div class="sea-footer-row">
+    <div class="sea-footer-copyright">
+      <span>©</span>
+      
+        2024-2025
+      
+      <span>·</span>
+      zuko
+    </div>
+    <span class="split-line">|</span>
+    <div class="sea-footer-theme-by">
+      Theme by <a class="theme" href="https://github.com/hai-zou/hexo-theme-sea" target="_blank">Sea</a>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="/js/main.js"></script>
+
+
+<script src="/js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+let THEME_NAME="hexo_theme_sea",THEME_MODE_LIGHT="light",THEME_MODE_DARK="dark",getThemeKey=()=>window.localStorage.getItem(THEME_NAME)||THEME_MODE_LIGHT,saveThemeKey=e=>{window.localStorage.setItem(THEME_NAME,e)},setThemeKey=e=>{document.documentElement.setAttribute("theme",e)};function onInitSetThemeKey(){var e=getThemeKey();setThemeKey(e)}onInitSetThemeKey();

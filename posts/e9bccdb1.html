@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>为你的Windows系统安装Debian12双系统 | 远枫博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="theme-color" content="#FFA500">
+
+  <link rel="canonical" href="http://example.com/posts/e9bccdb1.html">
+
+  <link rel="shortcut icon" href="https://cdn.jsdmirror.com/gh/kkkk33t/cdntc/*img/*/favicon.ico">
+
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+
+  
+  <meta name="description" content="安装windows和linux双系统其实并不复杂，有时候我们的确有这方面需求，本文将告诉如何在你的Windows电脑上安装Debian GNOME双系统。  1. 背景你可能在想，为什么要在Windows系统上再安装一个Linux系统呢？Linux系统以其稳定性和灵活性而闻名，特别是在开发者和系统管理员中。Debian，作为Linux的一个发行版，以其稳定性和安全性而受到青睐。与Ubuntu相比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为你的Windows系统安装Debian12双系统">
+<meta property="og:url" content="http://example.com/posts/e9bccdb1.html">
+<meta property="og:site_name" content="远枫博客">
+<meta property="og:description" content="安装windows和linux双系统其实并不复杂，有时候我们的确有这方面需求，本文将告诉如何在你的Windows电脑上安装Debian GNOME双系统。  1. 背景你可能在想，为什么要在Windows系统上再安装一个Linux系统呢？Linux系统以其稳定性和灵活性而闻名，特别是在开发者和系统管理员中。Debian，作为Linux的一个发行版，以其稳定性和安全性而受到青睐。与Ubuntu相比">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-11-13T01:22:23.000Z">
+<meta property="article:modified_time" content="2025-02-26T12:02:27.870Z">
+<meta property="article:author" content="zuko">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      --sea-color-primary: #FFA500;
+    }
+  </style>
+
+  
+<script src="/js/theme_mode.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <header class="sea-header">
+    <nav class="sea-nav-wrap">
+  <h1 class="sea-nav-logo" title="">
+    <a href="/">远枫博客</a>
+  </h1>
+  <div class="sea-nav-menus">
+    <div id="sea-nav-toggle">
+      <svg t="1716965724278" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10878" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M950.857143 768v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429v-73.142857c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z m0-292.571429v73.142858c0 20.004571-16.566857 36.571429-36.571429 36.571428H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571428v-73.142858c0-20.004571 16.566857-36.571429 36.571429-36.571428h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571428z m0-292.571428v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429V182.857143c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z" p-id="10879"></path></svg>
+    </div>
+
+    <div class="sea-menu-wrap">
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/articles/"
+    >
+      文章
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/categories/"
+    >
+      分类
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/tags/"
+    >
+      标签
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/archives/"
+    >
+      归档
+    </a>
+  
+
+  <span class="sea-menu-sep">|</span>
+
+  
+
+  <span class="sea-menu-icon" id="sea-theme-dark">
+    <svg t="1725413107294" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10118" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M557.553778 976.355556c-257.265778 0-466.56-207.160889-466.56-464.426667 0-253.923556 206.577778-464.284444 460.501333-464.284445h0.355556c10.766222 0 20.622222 3.953778 25.443555 13.610667 4.878222 9.756444 3.740444 20.394667-2.915555 29.027556-55.722667 72.220444-85.162667 158.108444-85.162667 249.372444 0 225.891556 183.779556 409.386667 409.671111 409.386667l5.248-0.256c10.325333-0.142222 20.977778 5.859556 25.841778 15.644444a28.302222 28.302222 0 0 1-2.915556 30.051556C837.902222 910.08 703.203556 976.355556 557.553778 976.355556zM495.274667 105.016889C299.192889 135.281778 147.882667 306.161778 147.882667 509.809778c0 225.877333 183.779556 409.656889 409.671111 409.656889 108.686222 0 210.403556-42.055111 286.577778-116.977778-231.566222-27.192889-411.804444-224.625778-411.804445-463.36 0-83.427556 21.617778-163.299556 62.947556-234.112z" fill="" p-id="10119"></path><path d="M578.830222 879.132444c-186.865778 0-345.784889-133.418667-377.841778-317.269333a14.222222 14.222222 0 1 1 28.017778-4.878222c29.681778 170.183111 176.810667 293.703111 349.824 293.703111a14.222222 14.222222 0 1 1 0 28.444444zM209.991111 531.2c-7.537778 0-13.838222-6.997333-14.193778-14.606222-0.312889-6.584889-0.483556-13.795556-0.483555-20.465778 0-7.864889 6.357333-14.492444 14.222222-14.492444s14.222222 6.229333 14.222222 14.094222c0 6.229333 0.170667 13.425778 0.455111 19.584 0.369778 7.850667-5.674667 15.886222-13.525333 15.886222h-0.696889z" fill="" p-id="10120"></path><path d="M622.350222 309.930667m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10121"></path><path d="M787.072 188.273778m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10122"></path><path d="M731.960889 415.303111m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" p-id="10123"></path></svg>
+  </span>
+  <span class="sea-menu-icon" id="sea-theme-light">
+    <svg t="1725410359322" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4274" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 768c-141.376 0-256-114.624-256-256s114.624-256 256-256 256 114.624 256 256-114.624 256-256 256z m0-85.333333a170.666667 170.666667 0 1 0 0-341.333334 170.666667 170.666667 0 0 0 0 341.333334zM469.333333 85.333333a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0V85.333333z m0 768a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0v-85.333334zM85.333333 554.666667a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334H85.333333z m768 0a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334h-85.333334zM161.834667 222.165333a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m576 576a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m-515.669334 64a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z m576-576a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z" p-id="4275"></path></svg>
+  </span>
+
+  <span id="sea-menu-close-icon">
+    <svg t="1725435896874" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4408" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M556.8 512l265.6-265.6c12.8-12.8 12.8-32 0-44.8s-32-12.8-44.8 0L512 467.2 246.4 201.6c-12.8-12.8-32-12.8-44.8 0s-12.8 32 0 44.8l265.6 265.6-265.6 265.6c-12.8 12.8-12.8 32 0 44.8 6.4 6.4 12.8 9.6 22.4 9.6s16-3.2 22.4-9.6l265.6-265.6 265.6 265.6c6.4 6.4 16 9.6 22.4 9.6s16-3.2 22.4-9.6c12.8-12.8 12.8-32 0-44.8L556.8 512z" p-id="4409"></path></svg>
+  </span>
+</div>
+<div id="sea-nav-dimmer"></div>
+  </div>
+</nav>
+  </header>
+  <main id="sea-main-wrapper">
+    <article class="sea-page-card-wrapper">
+  <header class="sea-article-header">
+    <h1 class="sea-article-title">为你的Windows系统安装Debian12双系统</h1>
+    
+      <div class="sea-post-meta sea-post-meta__center">
+        <div class="sea-post-time">
+  <svg t="1716964550804" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2621" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M805.49888 981.49888l-602.3168-0.76288c-86.59456-8.192-154.56768-81.3056-154.56768-170.01472L48.6144 291.73248c0-94.1568 76.60032-170.75712 170.7776-170.75712l586.10176 0c94.1568 0 170.73152 76.60032 170.73152 170.75712L976.22528 810.7008C976.2304 904.87296 899.63008 981.49888 805.49888 981.49888L805.49888 981.49888zM219.3664 190.57152c-55.79776 0-101.20192 45.38368-101.20192 101.18144l0 518.96832c0 55.79776 45.40416 101.20704 101.20192 101.20704l586.13248 0c55.77728 0 101.16096-45.40928 101.16096-101.20704L906.65984 291.73248c0-55.79776-45.38368-101.18656-101.16096-101.18656L219.3664 190.54592 219.3664 190.57152zM698.84416 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L745.22624 244.1216C745.22624 269.7472 724.46976 290.51904 698.84416 290.51904L698.84416 290.51904zM315.65824 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L362.04032 244.1216C362.04032 269.7472 341.28896 290.51904 315.65824 290.51904L315.65824 290.51904zM534.8864 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C581.26848 774.01088 560.4864 794.78784 534.8864 794.78784L534.8864 794.78784zM930.79552 452.608 121.24672 452.608c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l809.5744 0c25.6 0 46.38208 20.77696 46.38208 46.38208C977.2032 431.82592 956.42624 452.608 930.79552 452.608L930.79552 452.608zM327.92576 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208C374.30784 628.25472 353.52576 649.03168 327.92576 649.03168L327.92576 649.03168zM534.8864 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208S560.4864 649.03168 534.8864 649.03168L534.8864 649.03168zM741.27872 649.03168l-44.26752 0c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.77696 46.38208 46.38208C787.6608 628.25472 766.90944 649.03168 741.27872 649.03168L741.27872 649.03168zM327.92576 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C374.30784 774.01088 353.52576 794.78784 327.92576 794.78784L327.92576 794.78784zM741.27872 794.78784l-44.26752 0c-25.60512 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.78208 46.38208 46.38208C787.6608 774.01088 766.90944 794.78784 741.27872 794.78784L741.27872 794.78784z" p-id="2622"></path></svg>
+  <time datetime="2024-11-13T01:22:23.000Z">2024-11-13</time>
+</div>
+        
+  <div class="sea-post-categories">
+    <svg t="1716964680422" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4550" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M810.666667 85.333333a85.333333 85.333333 0 0 1 85.333333 85.333334v152.021333c36.821333 9.493333 64 42.88 64 82.645333v405.333334a128 128 0 0 1-128 128H192a128 128 0 0 1-128-128V298.666667a85.376 85.376 0 0 1 64-82.645334V170.666667a85.333333 85.333333 0 0 1 85.333333-85.333334h597.333334zM128.149333 296.170667L128 298.666667v512a64 64 0 0 0 60.245333 63.893333L192 874.666667h640a64 64 0 0 0 63.893333-60.245334L896 810.666667V405.333333a21.333333 21.333333 0 0 0-18.837333-21.184L874.666667 384H638.165333l-122.069333-101.717333a21.333333 21.333333 0 0 0-10.688-4.736l-2.986667-0.213334H149.333333a21.333333 21.333333 0 0 0-21.184 18.837334zM535.189333 213.333333l127.978667 106.666667H832V170.666667a21.333333 21.333333 0 0 0-18.837333-21.184L810.666667 149.333333H213.333333a21.333333 21.333333 0 0 0-21.184 18.837334L192 170.666667v42.666666h343.168z" p-id="4551"></path></svg>
+    <a class="category-link" href="/categories/linux/">linux</a>
+  </div>
+
+        
+  <div class="sea-post-tags">
+    <svg t="1716964811431" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6117" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M384 977.152c-20.5312 0-39.8336-7.9872-54.3232-22.4256l-260.4032-260.4032c-14.4896-14.4896-22.4256-33.7408-22.4256-54.3232s7.9872-39.8336 22.4256-54.3232l439.6032-439.6032c24.9344-24.9344 70.2464-43.7248 105.5232-43.7248h230.4c42.3424 0 76.8 34.4576 76.8 76.8v230.4c0 35.2256-18.7904 80.5888-43.6736 105.5232l-439.6032 439.6032a76.1856 76.1856 0 0 1-54.3232 22.4256zM614.4 153.6c-21.248 0-54.272 13.6704-69.2736 28.7232l-439.6032 439.6032c-4.8128 4.8128-7.424 11.2128-7.424 18.1248s2.6624 13.312 7.424 18.0736l260.4032 260.4032c4.8128 4.8128 11.2128 7.424 18.1248 7.424s13.312-2.6624 18.1248-7.424l439.6032-439.6032c15.0016-15.0016 28.7232-48.0768 28.7232-69.3248V179.2a25.6 25.6 0 0 0-25.6-25.6h-230.4z" p-id="6118"></path><path d="M742.4 358.4c-42.3424 0-76.8-34.4576-76.8-76.8S700.0576 204.8 742.4 204.8s76.8 34.4576 76.8 76.8S784.7424 358.4 742.4 358.4z m0-102.4a25.6 25.6 0 1 0 0 51.2 25.6 25.6 0 0 0 0-51.2z" p-id="6119"></path></svg>
+    <a class="tag-link" href="/tags/linux/" rel="tag">linux</a> , <a class="tag-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a>
+  </div>
+
+      </div>
+    
+  </header>
+  <div class="sea-doc">
+    
+    
+      <div class="sea-article-catalog">
+        <h2>目录</h2>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">1. 背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Debian%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">为什么选择Debian？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9GNOME%E6%A1%8C%E9%9D%A2%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">为什么选择GNOME桌面？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">2. 安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 下载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Live%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Live镜像安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">3. 优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 显卡安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%85%B6%E4%BB%96%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 其他优化设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">4. 安装软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Debian%E6%8D%A2%E6%BA%90"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Debian换源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%98%9F%E7%81%AB%E5%95%86%E5%BA%97"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 星火商店</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Flathub"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 Flathub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%85%B6%E4%BB%96%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 其他离线安装方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">5. 系统备份与环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%AE%89%E8%A3%85Timeshift%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%AE%9A%E6%9C%9F%E5%A4%87%E4%BB%BD"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 安装Timeshift并进行定期备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E9%85%8D%E7%BD%AENode-js%E7%8E%AF%E5%A2%83"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 配置Node.js环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 配置Java环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">6. 总结</span></a></li></ol>
+      </div>
+    
+    <div class="sea-article-content">
+      <blockquote>
+<p>安装windows和linux双系统其实并不复杂，有时候我们的确有这方面需求，本文将告诉如何在你的Windows电脑上安装Debian GNOME双系统。</p>
+</blockquote>
+<h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p>你可能在想，为什么要在Windows系统上再安装一个Linux系统呢？Linux系统以其稳定性和灵活性而闻名，特别是在开发者和系统管理员中。Debian，作为Linux的一个发行版，以其稳定性和安全性而受到青睐。与Ubuntu相比，Debian提供了更多的软件包和更长的系统支持周期。而GNOME桌面环境以其简洁和易用性而受到许多用户的喜爱。</p>
+<h3 id="为什么选择Debian？"><a href="#为什么选择Debian？" class="headerlink" title="为什么选择Debian？"></a>为什么选择Debian？</h3><ul>
+<li><strong>稳定性</strong>：Debian以其长时间的稳定性和安全性而著称，适合需要长时间运行的服务器和桌面环境。</li>
+<li><strong>丰富的软件库</strong>：Debian包含了大量的软件包，用户可以轻松安装和管理所需的软件。</li>
+<li><strong>自由软件理念</strong>：Debian致力于自由软件的推广，用户可以自由修改和分发软件。</li>
+</ul>
+<h3 id="为什么选择GNOME桌面？"><a href="#为什么选择GNOME桌面？" class="headerlink" title="为什么选择GNOME桌面？"></a>为什么选择GNOME桌面？</h3><ul>
+<li><strong>用户友好</strong>：GNOME提供直观的用户界面，适合新手使用。</li>
+<li><strong>可定制性</strong>：用户可以根据个人喜好和需求对桌面进行高度定制。</li>
+<li><strong>丰富的扩展</strong>：GNOME支持多种扩展，能够增强桌面的功能和美观。</li>
+</ul>
+<h2 id="2-安装教程"><a href="#2-安装教程" class="headerlink" title="2. 安装教程"></a>2. 安装教程</h2><h3 id="2-1-下载镜像"><a href="#2-1-下载镜像" class="headerlink" title="2.1 下载镜像"></a>2.1 下载镜像</h3><p>首先，我们需要从清华镜像仓库下载Debian Live GNOME镜像。以下是清华镜像仓库的地址：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/debian-cd/">清华镜像仓库</a></p>
+<p>Live镜像允许我们在安装系统之前先试用系统，这是它相比DVD镜像和网络安装镜像的优势。DVD镜像通常包含更多的软件包，但文件较大，而网络安装镜像则需要在安装过程中下载软件包，这可能会因为网络问题而变得复杂。</p>
+<h3 id="2-2-Live镜像安装"><a href="#2-2-Live镜像安装" class="headerlink" title="2.2 Live镜像安装"></a>2.2 Live镜像安装</h3><p>安装过程如下：</p>
+<ol>
+<li><p><strong>制作启动U盘</strong>：<br>使用工具如<a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a>将下载的镜像写入USB驱动器。</p>
+</li>
+<li><p><strong>重启电脑并从USB启动</strong>：<br>重启电脑，并确保从USB启动。</p>
+</li>
+<li><p><strong>选择试用或安装</strong>：<br>选择“Try Debian without installing”来试用系统。如果决定安装，选择“Install Debian”。</p>
+</li>
+<li><p><strong>分区步骤</strong>：<br>在分区步骤中，选择“Replace a partition”来取代一块分区。在此之前，你需要在Windows中使用磁盘管理工具划分出一块新的分区。</p>
+</li>
+<li><p><strong>选择文件系统</strong>：<br>选择文件系统为Btrfs，这是一种现代的文件系统，提供了更好的数据完整性和性能。</p>
+</li>
+<li><p><strong>完成安装</strong>：<br>按照提示完成安装，设置用户账户和密码，安装GRUB引导程序。</p>
+</li>
+</ol>
+<h2 id="3-优化"><a href="#3-优化" class="headerlink" title="3. 优化"></a>3. 优化</h2><h3 id="3-1-显卡安装"><a href="#3-1-显卡安装" class="headerlink" title="3.1 显卡安装"></a>3.1 显卡安装</h3><p>在安装过程中，集成显卡驱动可能已经安装成功。对于独立显卡，你需要从NVIDIA或AMD的官方网站下载相应的驱动程序，并按照指南进行安装。可以通过运行<code>lspci | grep VGA</code>命令来检查驱动是否已经安装好。</p>
+<p>对于NVIDIA显卡，你可以通过以下步骤安装驱动：</p>
+<ol>
+<li>打开终端。</li>
+<li>输入<code>sudo apt update</code>更新软件包列表。</li>
+<li>输入<code>sudo apt install nvidia-driver</code>安装NVIDIA驱动。</li>
+<li>重启电脑。</li>
+</ol>
+<p>对于AMD显卡，通常不需要额外安装驱动，因为开源驱动已经包含在Debian中。如果需要安装专有驱动，可以访问AMD官方网站下载并按照指南安装。</p>
+<h3 id="3-2-其他优化设置"><a href="#3-2-其他优化设置" class="headerlink" title="3.2 其他优化设置"></a>3.2 其他优化设置</h3><p>进行一些基本的系统优化，比如：</p>
+<ul>
+<li><strong>调整内核参数</strong>：编辑<code>/etc/sysctl.conf</code>文件，添加或修改参数以优化网络和系统性能。</li>
+<li><strong>优化网络设置</strong>：编辑<code>/etc/network/interfaces</code>文件，配置网络接口以提高网络连接速度。</li>
+<li><strong>安装必要的工具</strong>：比如<code>htop</code>（一个交互式的进程查看器），可以通过运行<code>sudo apt install htop</code>来安装。</li>
+</ul>
+<h2 id="4-安装软件"><a href="#4-安装软件" class="headerlink" title="4. 安装软件"></a>4. 安装软件</h2><h3 id="4-1-Debian换源"><a href="#4-1-Debian换源" class="headerlink" title="4.1 Debian换源"></a>4.1 Debian换源</h3><p>为了加快软件下载速度，我们可以将软件源更换为国内的镜像源。编辑<code>/etc/apt/sources.list</code>文件，将默认的源地址更换为国内的镜像地址，例如使用阿里云的源：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>更新源：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-2-星火商店"><a href="#4-2-星火商店" class="headerlink" title="4.2 星火商店"></a>4.2 星火商店</h3><p>星火商店是一个Linux软件商店，可以通过下载其安装包并运行安装命令来安装。使用星火商店可以方便地安装和管理软件。可以使用以下命令安装星火商店：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> snapd
+<span class="token function">sudo</span> snap <span class="token function">install</span> spark-store<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="4-3-Flathub"><a href="#4-3-Flathub" class="headerlink" title="4.3 Flathub"></a>4.3 Flathub</h3><p>Flathub是一个跨平台的Linux应用商店。首先，你需要安装Flatpak，然后添加上海交大的Flathub镜像源，最后通过Flathub下载和安装应用。安装Flatpak的命令如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="4-4-其他离线安装方式"><a href="#4-4-其他离线安装方式" class="headerlink" title="4.4 其他离线安装方式"></a>4.4 其他离线安装方式</h3><p>介绍如何通过下载.deb包进行离线安装，以及如何使用<code>dpkg</code>命令安装软件包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> dpkg <span class="token parameter variable">-i</span> package.deb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="5-系统备份与环境配置"><a href="#5-系统备份与环境配置" class="headerlink" title="5. 系统备份与环境配置"></a>5. 系统备份与环境配置</h2><h3 id="5-1-安装Timeshift并进行定期备份"><a href="#5-1-安装Timeshift并进行定期备份" class="headerlink" title="5.1 安装Timeshift并进行定期备份"></a>5.1 安装Timeshift并进行定期备份</h3><p>Timeshift是一个强大的系统备份工具，可以帮助你创建系统快照并恢复到以前的状态。以下是安装和配置Timeshift的步骤：</p>
+<ol>
+<li><p><strong>安装Timeshift</strong>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> timeshift<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>启动Timeshift</strong>：<br>在终端中输入<code>timeshift</code>，或者在应用菜单中找到Timeshift并启动。</p>
+</li>
+<li><p><strong>配置备份</strong>：</p>
+<ul>
+<li>选择备份类型（RSYNC或BTRFS）。</li>
+<li>设置快照的保存位置（建议选择外部驱动器或另一分区）。</li>
+<li>配置定期快照（可以设置每天、每周或每月的自动备份）。</li>
+</ul>
+</li>
+<li><p><strong>手动创建快照</strong>：<br>在Timeshift界面中，点击“创建”按钮以手动创建快照。</p>
+</li>
+</ol>
+<h3 id="5-2-配置Node-js环境"><a href="#5-2-配置Node-js环境" class="headerlink" title="5.2 配置Node.js环境"></a>5.2 配置Node.js环境</h3><p>使用Node Version Manager (nvm) 来管理Node.js版本：</p>
+<ol>
+<li><p><strong>安装nvm</strong>：<br>在终端中运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>加载nvm</strong>：<br>在终端中运行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvm"</span>
+<span class="token punctuation">[</span> <span class="token parameter variable">-s</span> <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token comment"># This loads nvm</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>安装Node.js</strong>：<br>使用nvm安装Node.js的最新版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm <span class="token function">install</span> <span class="token function">node</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>验证安装</strong>：<br>输入<code>node -v</code>和<code>npm -v</code>来验证Node.js和npm是否安装成功。</p>
+</li>
+</ol>
+<h3 id="5-3-配置Java环境"><a href="#5-3-配置Java环境" class="headerlink" title="5.3 配置Java环境"></a>5.3 配置Java环境</h3><ol>
+<li><p><strong>安装OpenJDK</strong>：<br>使用以下命令安装OpenJDK：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openjdk-11-jdk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>验证安装</strong>：<br>输入以下命令来检查Java版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">java</span> <span class="token parameter variable">-version</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>设置JAVA_HOME</strong>：<br>编辑<code>~/.bashrc</code>文件，添加以下行（根据安装的JDK版本调整路径）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/lib/jvm/java-11-openjdk-amd64
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后运行以下命令使更改生效：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>通过以上步骤，你可以在Windows电脑上成功安装Debian GNOME系统，并配置好备份、Node.js和Java环境。</p>
+
+    </div>
+  </div>
+
+  
+    
+  <div class="sea-prev-next-wrapper">
+    
+      <div class="prev">
+        <span><</span>
+        <a class="link" href="/posts/b2594a09.html">
+          scoop简易安装教程
+        </a>
+      </div>
+    
+    
+      <div class="next">
+        <a class="link" href="/posts/96a7fa15.html">
+          hexo后台管理插件hexo-pro
+        </a>
+        <span>></span>
+      </div>
+    
+  </div>
+
+  
+</article>
+
+
+  </main>
+  <footer id="sea-footer-container">
+  <div class="sea-footer-row">
+    <div class="sea-footer-menu-link">
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://github.com/xieyangyuyue"
+        >
+          Github
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://gitee.com/hai_zou"
+        >
+          Gitee
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+    </div>
+  </div>
+  
+  
+  <div class="sea-footer-row">
+    <div class="sea-footer-copyright">
+      <span>©</span>
+      
+        2024-2025
+      
+      <span>·</span>
+      zuko
+    </div>
+    <span class="split-line">|</span>
+    <div class="sea-footer-theme-by">
+      Theme by <a class="theme" href="https://github.com/hai-zou/hexo-theme-sea" target="_blank">Sea</a>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="/js/main.js"></script>
+
+
+<script src="/js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>服务器重装后配置环境 | 远枫博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="theme-color" content="#FFA500">
+
+  <link rel="canonical" href="http://example.com/posts/d43bf55a.html">
+
+  <link rel="shortcut icon" href="https://cdn.jsdmirror.com/gh/kkkk33t/cdntc/*img/*/favicon.ico">
+
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+
+  
+  <meta name="description" content="1. 换源要在Debian系统中将APT源更换为USTC镜像，可以按照以下详细步骤进行操作： 更换APT源为USTC镜像 打开终端：在你的Debian系统中打开终端。  进入APT配置目录： cd &#x2F;etc&#x2F;apt  备份当前的sources.list文件：为了防止出现问题，可以备份当前的sources.list文件： mv sources.list sources.list.bak  使用文本编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器重装后配置环境">
+<meta property="og:url" content="http://example.com/posts/d43bf55a.html">
+<meta property="og:site_name" content="远枫博客">
+<meta property="og:description" content="1. 换源要在Debian系统中将APT源更换为USTC镜像，可以按照以下详细步骤进行操作： 更换APT源为USTC镜像 打开终端：在你的Debian系统中打开终端。  进入APT配置目录： cd &#x2F;etc&#x2F;apt  备份当前的sources.list文件：为了防止出现问题，可以备份当前的sources.list文件： mv sources.list sources.list.bak  使用文本编">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-10-20T04:34:07.000Z">
+<meta property="article:modified_time" content="2025-02-26T12:02:27.886Z">
+<meta property="article:author" content="zuko">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="编程日志">
+<meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      --sea-color-primary: #FFA500;
+    }
+  </style>
+
+  
+<script src="/js/theme_mode.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <header class="sea-header">
+    <nav class="sea-nav-wrap">
+  <h1 class="sea-nav-logo" title="">
+    <a href="/">远枫博客</a>
+  </h1>
+  <div class="sea-nav-menus">
+    <div id="sea-nav-toggle">
+      <svg t="1716965724278" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10878" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M950.857143 768v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429v-73.142857c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z m0-292.571429v73.142858c0 20.004571-16.566857 36.571429-36.571429 36.571428H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571428v-73.142858c0-20.004571 16.566857-36.571429 36.571429-36.571428h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571428z m0-292.571428v73.142857c0 20.004571-16.566857 36.571429-36.571429 36.571429H109.714286c-20.004571 0-36.571429-16.566857-36.571429-36.571429V182.857143c0-20.004571 16.566857-36.571429 36.571429-36.571429h804.571428c20.004571 0 36.571429 16.566857 36.571429 36.571429z" p-id="10879"></path></svg>
+    </div>
+
+    <div class="sea-menu-wrap">
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/articles/"
+    >
+      文章
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/categories/"
+    >
+      分类
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/tags/"
+    >
+      标签
+    </a>
+  
+    <a
+      class="sea-menu-link"
+      
+      href="/archives/"
+    >
+      归档
+    </a>
+  
+
+  <span class="sea-menu-sep">|</span>
+
+  
+
+  <span class="sea-menu-icon" id="sea-theme-dark">
+    <svg t="1725413107294" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10118" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M557.553778 976.355556c-257.265778 0-466.56-207.160889-466.56-464.426667 0-253.923556 206.577778-464.284444 460.501333-464.284445h0.355556c10.766222 0 20.622222 3.953778 25.443555 13.610667 4.878222 9.756444 3.740444 20.394667-2.915555 29.027556-55.722667 72.220444-85.162667 158.108444-85.162667 249.372444 0 225.891556 183.779556 409.386667 409.671111 409.386667l5.248-0.256c10.325333-0.142222 20.977778 5.859556 25.841778 15.644444a28.302222 28.302222 0 0 1-2.915556 30.051556C837.902222 910.08 703.203556 976.355556 557.553778 976.355556zM495.274667 105.016889C299.192889 135.281778 147.882667 306.161778 147.882667 509.809778c0 225.877333 183.779556 409.656889 409.671111 409.656889 108.686222 0 210.403556-42.055111 286.577778-116.977778-231.566222-27.192889-411.804444-224.625778-411.804445-463.36 0-83.427556 21.617778-163.299556 62.947556-234.112z" fill="" p-id="10119"></path><path d="M578.830222 879.132444c-186.865778 0-345.784889-133.418667-377.841778-317.269333a14.222222 14.222222 0 1 1 28.017778-4.878222c29.681778 170.183111 176.810667 293.703111 349.824 293.703111a14.222222 14.222222 0 1 1 0 28.444444zM209.991111 531.2c-7.537778 0-13.838222-6.997333-14.193778-14.606222-0.312889-6.584889-0.483556-13.795556-0.483555-20.465778 0-7.864889 6.357333-14.492444 14.222222-14.492444s14.222222 6.229333 14.222222 14.094222c0 6.229333 0.170667 13.425778 0.455111 19.584 0.369778 7.850667-5.674667 15.886222-13.525333 15.886222h-0.696889z" fill="" p-id="10120"></path><path d="M622.350222 309.930667m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10121"></path><path d="M787.072 188.273778m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" fill="" p-id="10122"></path><path d="M731.960889 415.303111m-25.344 0a25.344 25.344 0 1 0 50.688 0 25.344 25.344 0 1 0-50.688 0Z" p-id="10123"></path></svg>
+  </span>
+  <span class="sea-menu-icon" id="sea-theme-light">
+    <svg t="1725410359322" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4274" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 768c-141.376 0-256-114.624-256-256s114.624-256 256-256 256 114.624 256 256-114.624 256-256 256z m0-85.333333a170.666667 170.666667 0 1 0 0-341.333334 170.666667 170.666667 0 0 0 0 341.333334zM469.333333 85.333333a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0V85.333333z m0 768a42.666667 42.666667 0 1 1 85.333334 0v85.333334a42.666667 42.666667 0 1 1-85.333334 0v-85.333334zM85.333333 554.666667a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334H85.333333z m768 0a42.666667 42.666667 0 1 1 0-85.333334h85.333334a42.666667 42.666667 0 1 1 0 85.333334h-85.333334zM161.834667 222.165333a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m576 576a42.666667 42.666667 0 0 1 60.330666-60.330666l64 64a42.666667 42.666667 0 0 1-60.330666 60.330666l-64-64z m-515.669334 64a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z m576-576a42.666667 42.666667 0 0 1-60.330666-60.330666l64-64a42.666667 42.666667 0 0 1 60.330666 60.330666l-64 64z" p-id="4275"></path></svg>
+  </span>
+
+  <span id="sea-menu-close-icon">
+    <svg t="1725435896874" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4408" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M556.8 512l265.6-265.6c12.8-12.8 12.8-32 0-44.8s-32-12.8-44.8 0L512 467.2 246.4 201.6c-12.8-12.8-32-12.8-44.8 0s-12.8 32 0 44.8l265.6 265.6-265.6 265.6c-12.8 12.8-12.8 32 0 44.8 6.4 6.4 12.8 9.6 22.4 9.6s16-3.2 22.4-9.6l265.6-265.6 265.6 265.6c6.4 6.4 16 9.6 22.4 9.6s16-3.2 22.4-9.6c12.8-12.8 12.8-32 0-44.8L556.8 512z" p-id="4409"></path></svg>
+  </span>
+</div>
+<div id="sea-nav-dimmer"></div>
+  </div>
+</nav>
+  </header>
+  <main id="sea-main-wrapper">
+    <article class="sea-page-card-wrapper">
+  <header class="sea-article-header">
+    <h1 class="sea-article-title">服务器重装后配置环境</h1>
+    
+      <div class="sea-post-meta sea-post-meta__center">
+        <div class="sea-post-time">
+  <svg t="1716964550804" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2621" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M805.49888 981.49888l-602.3168-0.76288c-86.59456-8.192-154.56768-81.3056-154.56768-170.01472L48.6144 291.73248c0-94.1568 76.60032-170.75712 170.7776-170.75712l586.10176 0c94.1568 0 170.73152 76.60032 170.73152 170.75712L976.22528 810.7008C976.2304 904.87296 899.63008 981.49888 805.49888 981.49888L805.49888 981.49888zM219.3664 190.57152c-55.79776 0-101.20192 45.38368-101.20192 101.18144l0 518.96832c0 55.79776 45.40416 101.20704 101.20192 101.20704l586.13248 0c55.77728 0 101.16096-45.40928 101.16096-101.20704L906.65984 291.73248c0-55.79776-45.38368-101.18656-101.16096-101.18656L219.3664 190.54592 219.3664 190.57152zM698.84416 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L745.22624 244.1216C745.22624 269.7472 724.46976 290.51904 698.84416 290.51904L698.84416 290.51904zM315.65824 290.51904c-25.60512 0-46.38208-20.77696-46.38208-46.38208l0-158.6688c0-25.6 20.77696-46.38208 46.38208-46.38208 25.6 0 46.38208 20.78208 46.38208 46.38208L362.04032 244.1216C362.04032 269.7472 341.28896 290.51904 315.65824 290.51904L315.65824 290.51904zM534.8864 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C581.26848 774.01088 560.4864 794.78784 534.8864 794.78784L534.8864 794.78784zM930.79552 452.608 121.24672 452.608c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l809.5744 0c25.6 0 46.38208 20.77696 46.38208 46.38208C977.2032 431.82592 956.42624 452.608 930.79552 452.608L930.79552 452.608zM327.92576 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208C374.30784 628.25472 353.52576 649.03168 327.92576 649.03168L327.92576 649.03168zM534.8864 649.03168l-44.27264 0c-25.6 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.77696 46.38208 46.38208S560.4864 649.03168 534.8864 649.03168L534.8864 649.03168zM741.27872 649.03168l-44.26752 0c-25.60512 0-46.38208-20.78208-46.38208-46.38208 0-25.60512 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.77696 46.38208 46.38208C787.6608 628.25472 766.90944 649.03168 741.27872 649.03168L741.27872 649.03168zM327.92576 794.78784l-44.27264 0c-25.6 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.78208-46.38208 46.38208-46.38208l44.27264 0c25.6 0 46.38208 20.78208 46.38208 46.38208C374.30784 774.01088 353.52576 794.78784 327.92576 794.78784L327.92576 794.78784zM741.27872 794.78784l-44.26752 0c-25.60512 0-46.38208-20.77696-46.38208-46.38208 0-25.6 20.77696-46.38208 46.38208-46.38208l44.26752 0c25.60512 0 46.38208 20.78208 46.38208 46.38208C787.6608 774.01088 766.90944 794.78784 741.27872 794.78784L741.27872 794.78784z" p-id="2622"></path></svg>
+  <time datetime="2024-10-20T04:34:07.000Z">2024-10-20</time>
+</div>
+        
+  <div class="sea-post-categories">
+    <svg t="1716964680422" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4550" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M810.666667 85.333333a85.333333 85.333333 0 0 1 85.333333 85.333334v152.021333c36.821333 9.493333 64 42.88 64 82.645333v405.333334a128 128 0 0 1-128 128H192a128 128 0 0 1-128-128V298.666667a85.376 85.376 0 0 1 64-82.645334V170.666667a85.333333 85.333333 0 0 1 85.333333-85.333334h597.333334zM128.149333 296.170667L128 298.666667v512a64 64 0 0 0 60.245333 63.893333L192 874.666667h640a64 64 0 0 0 63.893333-60.245334L896 810.666667V405.333333a21.333333 21.333333 0 0 0-18.837333-21.184L874.666667 384H638.165333l-122.069333-101.717333a21.333333 21.333333 0 0 0-10.688-4.736l-2.986667-0.213334H149.333333a21.333333 21.333333 0 0 0-21.184 18.837334zM535.189333 213.333333l127.978667 106.666667H832V170.666667a21.333333 21.333333 0 0 0-18.837333-21.184L810.666667 149.333333H213.333333a21.333333 21.333333 0 0 0-21.184 18.837334L192 170.666667v42.666666h343.168z" p-id="4551"></path></svg>
+    <a class="category-link" href="/categories/linux/">linux</a>
+  </div>
+
+        
+  <div class="sea-post-tags">
+    <svg t="1716964811431" class="sea-svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6117" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M384 977.152c-20.5312 0-39.8336-7.9872-54.3232-22.4256l-260.4032-260.4032c-14.4896-14.4896-22.4256-33.7408-22.4256-54.3232s7.9872-39.8336 22.4256-54.3232l439.6032-439.6032c24.9344-24.9344 70.2464-43.7248 105.5232-43.7248h230.4c42.3424 0 76.8 34.4576 76.8 76.8v230.4c0 35.2256-18.7904 80.5888-43.6736 105.5232l-439.6032 439.6032a76.1856 76.1856 0 0 1-54.3232 22.4256zM614.4 153.6c-21.248 0-54.272 13.6704-69.2736 28.7232l-439.6032 439.6032c-4.8128 4.8128-7.424 11.2128-7.424 18.1248s2.6624 13.312 7.424 18.0736l260.4032 260.4032c4.8128 4.8128 11.2128 7.424 18.1248 7.424s13.312-2.6624 18.1248-7.424l439.6032-439.6032c15.0016-15.0016 28.7232-48.0768 28.7232-69.3248V179.2a25.6 25.6 0 0 0-25.6-25.6h-230.4z" p-id="6118"></path><path d="M742.4 358.4c-42.3424 0-76.8-34.4576-76.8-76.8S700.0576 204.8 742.4 204.8s76.8 34.4576 76.8 76.8S784.7424 358.4 742.4 358.4z m0-102.4a25.6 25.6 0 1 0 0 51.2 25.6 25.6 0 0 0 0-51.2z" p-id="6119"></path></svg>
+    <a class="tag-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a> , <a class="tag-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%97%A5%E5%BF%97/" rel="tag">编程日志</a>
+  </div>
+
+      </div>
+    
+  </header>
+  <div class="sea-doc">
+    
+    
+      <div class="sea-article-catalog">
+        <h2>目录</h2>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8D%A2%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">1. 换源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2APT%E6%BA%90%E4%B8%BAUSTC%E9%95%9C%E5%83%8F"><span class="toc-number">1.1.</span> <span class="toc-text">更换APT源为USTC镜像</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">2. 初始化服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">2.1.</span> <span class="toc-text">1. 修改用户密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BC%98%E5%8C%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD"><span class="toc-number">2.2.</span> <span class="toc-text">2. 优化服务器性能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BD%AC%E6%8D%A2github%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">3. 转换github源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE%E6%8F%90%E7%A4%BA"><span class="toc-number">4.</span> <span class="toc-text">4. 配置提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-number">5.</span> <span class="toc-text">5. 常用工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%9C%A8-Debian-%E4%B8%8A%E5%AE%89%E8%A3%85-htop-fastfetch"><span class="toc-number">6.</span> <span class="toc-text">6. 在 Debian 上安装 htop fastfetch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85htop"><span class="toc-number">6.1.</span> <span class="toc-text">安装htop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85fastfetch"><span class="toc-number">6.2.</span> <span class="toc-text">安装fastfetch</span></a></li></ol></li></ol>
+      </div>
+    
+    <div class="sea-article-content">
+      <h3 id="1-换源"><a href="#1-换源" class="headerlink" title="1. 换源"></a>1. 换源</h3><p>要在Debian系统中将APT源更换为USTC镜像，可以按照以下详细步骤进行操作：</p>
+<h4 id="更换APT源为USTC镜像"><a href="#更换APT源为USTC镜像" class="headerlink" title="更换APT源为USTC镜像"></a>更换APT源为USTC镜像</h4><ol>
+<li><p><strong>打开终端</strong>：<br>在你的Debian系统中打开终端。</p>
+</li>
+<li><p><strong>进入APT配置目录</strong>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/apt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>备份当前的sources.list文件</strong>：<br>为了防止出现问题，可以备份当前的<code>sources.list</code>文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> sources.list sources.list.bak<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>使用文本编辑器（如nano）创建或编辑sources.list文件</strong>：<br>使用nano编辑器打开新的<code>sources.list</code>文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nano</span> sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>在nano编辑器中输入USTC镜像源</strong>：<br>根据您的Debian版本选择合适的源。例如，如果您使用的是Debian 11（Bullseye），可以输入以下内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 默认注释了源码仓库，如有需要可自行取消注释</span>
+deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
+<span class="token comment"># deb-src http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware</span>
+deb http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
+<span class="token comment"># deb-src http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware</span>
+
+<span class="token comment"># backports 软件源，请按需启用</span>
+<span class="token comment"># deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware</span>
+<span class="token comment"># deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>保存并退出nano</strong>：<br>按<code>CTRL + O</code>保存文件，按<code>Enter</code>确认文件名，按<code>CTRL + X</code>退出编辑器。</p>
+</li>
+<li><p><strong>更新APT包索引</strong>：<br>运行以下命令以更新APT包索引：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>完成以上步骤后，您的Debian系统将使用USTC镜像作为APT源。这样可以提高下载速度和稳定性。</p>
+</li>
+</ol>
+<h3 id="2-初始化服务器"><a href="#2-初始化服务器" class="headerlink" title="2. 初始化服务器"></a>2. 初始化服务器</h3><h4 id="1-修改用户密码"><a href="#1-修改用户密码" class="headerlink" title="1. 修改用户密码"></a>1. 修改用户密码</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">passwd</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2-优化服务器性能"><a href="#2-优化服务器性能" class="headerlink" title="2. 优化服务器性能"></a>2. 优化服务器性能</h4><ol>
+<li><p><strong>下载ssh_tool</strong><br>以下是您提供的步骤的详细说明和命令，帮助您在Debian系统上完成相关操作，包括创建用户、设置BBR加速、安装桌面环境以及安装Docker。</p>
+</li>
+<li><p><strong>下载并运行 SSH 工具脚本</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.kkgithub.com/eooce/ssh_tool/main/ssh_tool.sh  <span class="token parameter variable">-o</span> ssh_tool.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x ssh_tool.sh <span class="token operator">&amp;&amp;</span> ./ssh_tool.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>使用 tcpx.sh 设置 BBR + FQ 加速</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -qO- <span class="token string">'https://raw.kkgithub.com/ylx2016/Linux-NetSpeed/master/tcpx.sh'</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>安装桌面环境</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -qO- <span class="token string">'https://gitee.com/mo2/linux/raw/master/debian.sh'</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>分配虚拟内存</strong><br>虚拟内存的大小通常设置为真实内存的1.5倍。可以通过以下命令设置虚拟内存（以4GB实际内存为例）：</p>
+</li>
+<li><p><strong>使用 SSH 工具创建普通用户</strong><br>在脚本运行时，您将被询问是否要为新用户赋予<code>sudo</code>权限。如果选择“yes”，则该用户将成为高级用户。</p>
+</li>
+<li><p><strong>添加端口映射</strong><br>您可以通过修改防火墙规则或使用<code>iptables</code>进行端口映射。以下是一个简单的示例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 假设您希望将内网的36080端口映射到外网的任意端口（例如8080）</span>
+<span class="token function">sudo</span> iptables <span class="token parameter variable">-t</span> nat <span class="token parameter variable">-A</span> PREROUTING <span class="token parameter variable">-p</span> tcp <span class="token parameter variable">--dport</span> <span class="token number">8080</span> <span class="token parameter variable">-j</span> DNAT --to-destination <span class="token number">192.168</span>.1.100:36080
+<span class="token function">sudo</span> iptables <span class="token parameter variable">-t</span> nat <span class="token parameter variable">-A</span> POSTROUTING <span class="token parameter variable">-j</span> MASQUERADE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>（请根据您的网络配置调整IP地址和端口）</p>
+</li>
+<li><p><strong>安装 Docker</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> <span class="token parameter variable">-sSL</span> https://gitee.com/SuperManito/LinuxMirrors/raw/main/DockerInstallation.sh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>完成以上步骤后，您将成功创建用户、设置网络加速、安装桌面环境并安装Docker。请根据您的具体需求和系统环境进行相应的调整。</p>
+<h3 id="3-转换github源"><a href="#3-转换github源" class="headerlink" title="3. 转换github源"></a>3. 转换github源</h3><p>如果你想要修改<code>.gitconfig</code>文件，以便在使用<code>git clone</code>时自动将<code>https://github.com</code>替换为<code>https://kkgithub.com</code>，可以通过设置一个Git的URL重写规则来实现。以下是步骤：</p>
+<ol>
+<li><p><strong>打开终端（Terminal）</strong>。</p>
+</li>
+<li><p><strong>编辑全局Git配置文件（<code>.gitconfig</code>）</strong>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> url.<span class="token string">"https://kkgithub.com/"</span>.insteadOf <span class="token string">"https://github.com/"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这条命令的意思是：每当你使用<code>https://github.com/</code>作为URL时，Git会自动将其替换为<code>https://kkgithub.com/</code>。</p>
+</li>
+</ol>
+<h3 id="4-配置提示"><a href="#4-配置提示" class="headerlink" title="4. 配置提示"></a>4. 配置提示</h3><p>下面是安装和配置Zsh以及Oh My Zsh的详细步骤，包括插件的安装和配置。您可以按照以下步骤在Debian系统上完成这些操作：</p>
+<ol>
+<li><p><strong>安装Zsh</strong>：<br>在终端中运行以下命令以安装Zsh：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">zsh</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>配置Oh My Zsh</strong>：<br>首先，克隆Oh My Zsh的Git仓库：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>接着，进入<code>tools</code>目录并运行安装脚本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ohmyzsh/tools
+<span class="token assign-left variable">REMOTE</span><span class="token operator">=</span>https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git  <span class="token function">sh</span> install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>克隆插件并配置</strong>：<br>克隆语法高亮插件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://kkgithub.com/zsh-users/zsh-syntax-highlighting.git  <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>克隆自动建议插件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://kkgithub.com/zsh-users/zsh-autosuggestions  <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>克隆自动补全插件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.oh-my-zsh/custom/plugins
+<span class="token function">git</span> clone <span class="token parameter variable">--depth</span> <span class="token number">1</span> -- https://kkgithub.com/marlonrichert/zsh-autocomplete.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>配置Zsh使用插件</strong>：<br>编辑您的Zsh配置文件（<code>~/.zshrc</code>）以启用这些插件。打开文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nano</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>找到<code>plugins=(...)</code>这一行，并添加您刚刚克隆的插件，例如：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>git zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>设置Zsh为默认shell</strong>：<br>如果您希望将Zsh设置为默认shell，可以运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">chsh <span class="token parameter variable">-s</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> <span class="token function">zsh</span><span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>重新加载Zsh配置</strong>：<br>最后，您可以通过以下命令重新加载Zsh配置：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>完成以上步骤后，您将成功安装Zsh、配置Oh My Zsh及其插件，增强您的终端体验。此配置将使您的命令行界面更加友好和高效。</p>
+<h3 id="5-常用工具"><a href="#5-常用工具" class="headerlink" title="5. 常用工具"></a>5. 常用工具</h3><p>在终端中，如果您希望设置一个中断命令（例如，使用<code>Ctrl+C</code>中断当前正在运行的命令），但是又希望某些命令不受影响，可以考虑以下几种方法：</p>
+<ol>
+<li><p><strong>使用<code>nohup</code>命令</strong>：<br><code>nohup</code>命令可以让您的命令在用户退出后继续运行。它会忽略<code>SIGHUP</code>信号（即终端关闭信号），从而使得命令不受影响。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> your_command <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>使用<code>disown</code>命令</strong>：<br>如果您已经在前台运行了一个命令，可以通过按<code>Ctrl+Z</code>暂停它，然后使用<code>bg</code>命令将其放到后台，再使用<code>disown</code>命令让它与当前终端会话分离。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 暂停当前命令</span>
+Ctrl + Z
+
+<span class="token comment"># 将其放到后台</span>
+<span class="token function">bg</span>
+
+<span class="token comment"># 使其与当前终端会话分离</span>
+disown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>使用<code>setsid</code>命令</strong>：<br><code>setsid</code>命令可以启动一个新的会话，并且在这个会话中运行命令。它也会忽略<code>SIGHUP</code>信号。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">setsid your_command <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>使用<code>screen</code>或<code>tmux</code></strong>：<br><code>screen</code>和<code>tmux</code>是终端复用工具，可以让您在一个终端会话中运行多个会话。即使您关闭了终端，您的会话仍然会继续运行。</p>
+<p>使用<code>screen</code>:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动一个新的 screen 会话</span>
+<span class="token function">screen</span>
+
+<span class="token comment"># 在 screen 会话中运行您的命令</span>
+your_command
+
+<span class="token comment"># 按 Ctrl+A 然后按 D 来分离会话</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用<code>tmux</code>:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动一个新的 tmux 会话</span>
+tmux
+
+<span class="token comment"># 在 tmux 会话中运行您的命令</span>
+your_command
+
+<span class="token comment"># 按 Ctrl+B 然后按 D 来分离会话</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>使用<code>trap</code>命令</strong>：<br>如果您编写了一个脚本，并希望在接收到中断信号时执行特定操作，可以使用<code>trap</code>命令来捕获信号。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># 捕获 SIGINT (Ctrl+C)</span>
+<span class="token builtin class-name">trap</span> <span class="token string">'echo "Caught interrupt signal!"'</span> SIGINT
+
+<span class="token comment"># 运行一个长时间运行的命令</span>
+<span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token function">sleep</span> <span class="token number">1</span>
+<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>以上方法可以帮助您在终端中设置中断命令，但让某些命令继续运行。选择合适的方法取决于您的具体需求和使用场景。</p>
+<h3 id="6-在-Debian-上安装-htop-fastfetch"><a href="#6-在-Debian-上安装-htop-fastfetch" class="headerlink" title="6. 在 Debian 上安装 htop fastfetch"></a>6. 在 Debian 上安装 htop fastfetch</h3><p>安装<code>htop</code>和<code>fastfetch</code>可以帮助您更好地管理和监控您的Debian系统。</p>
+<h4 id="安装htop"><a href="#安装htop" class="headerlink" title="安装htop"></a>安装<code>htop</code></h4><ol>
+<li><p><strong>更新软件包列表</strong>：<br>首先，您需要更新系统的软件包列表，以确保您可以安装最新版本的软件。打开终端并运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>安装<code>htop</code></strong>：<br>使用以下命令安装<code>htop</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">htop</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>运行<code>htop</code></strong>：<br>安装完成后，您可以通过在终端中输入以下命令来运行<code>htop</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">htop</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h4 id="安装fastfetch"><a href="#安装fastfetch" class="headerlink" title="安装fastfetch"></a>安装<code>fastfetch</code></h4><p><code>fastfetch</code>是一个用于显示系统信息的工具，通常需要从源代码构建。以下是安装步骤：</p>
+<ol>
+<li><p><strong>安装依赖</strong>：<br>在安装<code>fastfetch</code>之前，您需要安装一些依赖项。运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span> gcc <span class="token function">make</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>下载<code>fastfetch</code>源代码</strong>：<br>使用<code>git</code>克隆<code>fastfetch</code>的GitHub仓库：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/LinusDikton/fastfetch.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>进入<code>fastfetch</code>目录</strong>：<br>进入下载的<code>fastfetch</code>目录：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> fastfetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>编译和安装</strong>：<br>运行以下命令编译并安装<code>fastfetch</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>运行<code>fastfetch</code></strong>：<br>安装完成后，您可以通过在终端中输入以下命令来运行<code>fastfetch</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fastfetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>通过以上步骤，您应该能够在Debian上成功安装<code>htop</code>和<code>fastfetch</code>。如果您在安装过程中遇到任何问题，请确保您的系统是最新的，并检查是否有任何错误信息。</p>
+
+    </div>
+  </div>
+
+  
+    
+  <div class="sea-prev-next-wrapper">
+    
+      <div class="prev">
+        <span><</span>
+        <a class="link" href="/posts/96a7fa15.html">
+          hexo后台管理插件hexo-pro
+        </a>
+      </div>
+    
+    
+      <div class="next">
+        <a class="link" href="/posts/c7a56469.html">
+          服务器基本配置
+        </a>
+        <span>></span>
+      </div>
+    
+  </div>
+
+  
+</article>
+
+
+  </main>
+  <footer id="sea-footer-container">
+  <div class="sea-footer-row">
+    <div class="sea-footer-menu-link">
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://github.com/xieyangyuyue"
+        >
+          Github
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+        <a
+          class="sea-footer-link"
+          
+            target="_blank"
+          
+          href="https://gitee.com/hai_zou"
+        >
+          Gitee
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      
+    </div>
+  </div>
+  
+  
+  <div class="sea-footer-row">
+    <div class="sea-footer-copyright">
+      <span>©</span>
+      
+        2024-2025
+      
+      <span>·</span>
+      zuko
+    </div>
+    <span class="split-line">|</span>
+    <div class="sea-footer-theme-by">
+      Theme by <a class="theme" href="https://github.com/hai-zou/hexo-theme-sea" target="_blank">Sea</a>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="/js/main.js"></script>
+
+
+<script src="/js/theme.js"></script>
+
+</body>
+</html>
